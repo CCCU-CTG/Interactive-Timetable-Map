@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Users>
+  <User_1>
+    <Username>Username</Username>
+	<Password>Password</Password>
+    <Class>Class</Class>	
+  </User_1>
+  <User_2>
+    <Username>Username</Username>
+	<Password>Password</Password>
+    <Class>Class</Class>	
+  </User_2>
+  <User_3>
+    <Username>Username</Username>
+	<Password>Password</Password>
+    <Class>Class</Class>	
+  </User_3>
+</Users>
