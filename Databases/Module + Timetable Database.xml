@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Modules>
-	<Module_1>
+	<Module>
 		<Module_Name>Computer Science</Module_Name>
-		<Class_A_Timetable>
+		<Group_A_Timetable>
 			<Monday>
 				<09:00>None</09:00>
 				<10:00>None</10:00>
@@ -68,8 +68,8 @@
 				<18:00>None</18:00>
 				<19:00>None</19:00>
 			</Friday>	
-		</Class_A_Timetable>
-		<Class_B_Timetable>
+		</Group_A_Timetable>
+		<Group_B_Timetable>
 			<Monday>
 				<09:00>None</09:00>
 				<10:00>None</10:00>
@@ -135,11 +135,11 @@
 				<18:00>None</18:00>
 				<19:00>None</19:00>
 			</Friday>
-		</Class_B_Timetable>
-	</Module_1>
-	<Module_2>
+		</Group_B_Timetable>
+	</Module>
+	<Module>
 		<Module_Name>Computing</Module_Name>
-		<Class_A_Timetable>
+		<Group_A_Timetable>
 			<Monday>
 				<09:00>None</09:00>
 				<10:00>None</10:00>
@@ -205,8 +205,8 @@
 				<18:00>None</18:00>
 				<19:00>None</19:00>
 			</Friday>
-		</Class_A_Timetable>
-		<Class_B_Timetable>
+		</Group_A_Timetable>
+		<Group_B_Timetable>
 			<Monday>
 				<09:00>None</09:00>
 				<10:00>None</10:00>
@@ -272,6 +272,6 @@
 				<18:00>None</18:00>
 				<19:00>None</19:00>
 			</Friday>
-		</Class_B_Timetable>
-	</Module_2>
+		</Group_B_Timetable>
+	</Module>
 </Modules>
