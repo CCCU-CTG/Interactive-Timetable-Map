@@ -13,8 +13,6 @@ All you need is the .exe file to have the program up and running.
 * **Gentian Gashi** - [GentianGashi](https://https://github.com/GentianGashi)
 * **Tovar Astrada** - [Doktor404](https://https://github.com/Doktor404)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
