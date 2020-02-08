@@ -8,10 +8,10 @@ All you need is the .exe file to have the program up and running.
 
 ## Authors
 
-* **Connor Dawkins** - [YuRukia](https://https://github.com/YuRukia)
-* **Tomas Porakis** - [Krink1337](https://https://github.com/KrinK1337)
-* **Gentian Gashi** - [GentianGashi](https://https://github.com/GentianGashi)
-* **Tovar Astrada** - [Doktor404](https://https://github.com/Doktor404)
+* **Connor Dawkins** - [YuRukia](https://github.com/YuRukia)
+* **Tomas Porakis** - [Krink1337](https://github.com/KrinK1337)
+* **Gentian Gashi** - [GentianGashi](https://github.com/GentianGashi)
+* **Tovar Astrada** - [Doktor404](https://github.com/Doktor404)
 
 ## License
 
