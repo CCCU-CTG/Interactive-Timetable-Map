@@ -1,0 +1,9 @@
+C:\Uni\Year 2 - Computer Science\Software Engineering\Assignment 2 - TimeTable\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csprojAssemblyReference.cache
+C:\Uni\Year 2 - Computer Science\Software Engineering\Assignment 2 - TimeTable\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.MainForm.resources
+C:\Uni\Year 2 - Computer Science\Software Engineering\Assignment 2 - TimeTable\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.Properties.Resources.resources
+C:\Uni\Year 2 - Computer Science\Software Engineering\Assignment 2 - TimeTable\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.GenerateResource.cache
+C:\Uni\Year 2 - Computer Science\Software Engineering\Assignment 2 - TimeTable\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe.config
+C:\Uni\Year 2 - Computer Science\Software Engineering\Assignment 2 - TimeTable\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe
+C:\Uni\Year 2 - Computer Science\Software Engineering\Assignment 2 - TimeTable\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.pdb
+C:\Uni\Year 2 - Computer Science\Software Engineering\Assignment 2 - TimeTable\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
+C:\Uni\Year 2 - Computer Science\Software Engineering\Assignment 2 - TimeTable\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
