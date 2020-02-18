@@ -15,3 +15,9 @@ C:\Users\genti\Desktop\New folder\Interactive-Timetable-Map-master\Interactive-T
 C:\Users\genti\Desktop\New folder\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.GenerateResource.cache
 C:\Users\genti\Desktop\New folder\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
 C:\Users\genti\Desktop\New folder\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
+C:\Users\genti\Desktop\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csprojAssemblyReference.cache
+C:\Users\genti\Desktop\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
+C:\Users\genti\Desktop\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
+C:\Users\genti\Desktop\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.MainForm.resources
+C:\Users\genti\Desktop\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.Properties.Resources.resources
+C:\Users\genti\Desktop\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.GenerateResource.cache
