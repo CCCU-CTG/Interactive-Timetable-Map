@@ -4,7 +4,7 @@ The program allows the student to login with their credentials and view their ti
 
 ## Getting Started
 
-All you need is the .exe file to have the program up and running.
+You need the .exe file and the XML files in a folder named Database to have the program up and running.
 
 ## Authors
 
