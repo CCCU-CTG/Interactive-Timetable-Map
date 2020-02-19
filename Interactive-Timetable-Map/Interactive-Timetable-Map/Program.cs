@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Login_System_Tut_ecnrypted
+namespace Interactive_Timetable_Map
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Login_System_Tut_ecnrypted
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }
