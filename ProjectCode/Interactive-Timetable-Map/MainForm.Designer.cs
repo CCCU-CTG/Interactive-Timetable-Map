@@ -30,6 +30,9 @@
         {
             this.timeTableGroupBoxUI = new System.Windows.Forms.GroupBox();
             this.userGroupBoxUI = new System.Windows.Forms.GroupBox();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.testingLoggedInTextBox = new System.Windows.Forms.TextBox();
+            this.userGroupBoxUI.SuspendLayout();
             this.SuspendLayout();
             // 
             // timeTableGroupBoxUI
@@ -43,12 +46,33 @@
             // 
             // userGroupBoxUI
             // 
+            this.userGroupBoxUI.Controls.Add(this.testingLoggedInTextBox);
+            this.userGroupBoxUI.Controls.Add(this.loginButton);
             this.userGroupBoxUI.Location = new System.Drawing.Point(611, 12);
             this.userGroupBoxUI.Name = "userGroupBoxUI";
             this.userGroupBoxUI.Size = new System.Drawing.Size(177, 426);
             this.userGroupBoxUI.TabIndex = 1;
             this.userGroupBoxUI.TabStop = false;
             this.userGroupBoxUI.Text = "User";
+            // 
+            // loginButton
+            // 
+            this.loginButton.Location = new System.Drawing.Point(7, 20);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(164, 23);
+            this.loginButton.TabIndex = 0;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // testingLoggedInTextBox
+            // 
+            this.testingLoggedInTextBox.Location = new System.Drawing.Point(7, 50);
+            this.testingLoggedInTextBox.Name = "testingLoggedInTextBox";
+            this.testingLoggedInTextBox.ReadOnly = true;
+            this.testingLoggedInTextBox.Size = new System.Drawing.Size(164, 20);
+            this.testingLoggedInTextBox.TabIndex = 1;
+            this.testingLoggedInTextBox.Text = "TEMP";
             // 
             // MainForm
             // 
@@ -61,6 +85,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.userGroupBoxUI.ResumeLayout(false);
+            this.userGroupBoxUI.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -69,6 +95,8 @@
 
         private System.Windows.Forms.GroupBox timeTableGroupBoxUI;
         private System.Windows.Forms.GroupBox userGroupBoxUI;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.TextBox testingLoggedInTextBox;
     }
 }
 

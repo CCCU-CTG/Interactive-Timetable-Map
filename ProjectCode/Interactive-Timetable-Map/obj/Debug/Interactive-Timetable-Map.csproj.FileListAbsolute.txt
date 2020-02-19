@@ -21,3 +21,15 @@ C:\Users\genti\Desktop\Interactive-Timetable-Map-master\Interactive-Timetable-Ma
 C:\Users\genti\Desktop\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.MainForm.resources
 C:\Users\genti\Desktop\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.Properties.Resources.resources
 C:\Users\genti\Desktop\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.GenerateResource.cache
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe.config
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.pdb
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csprojAssemblyReference.cache
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.MainForm.resources
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.Properties.Resources.resources
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.GenerateResource.cache
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.CoreCompileInputs.cache
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.RegForm.resources
+K:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\Interactive-Timetable-Map\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.loginForm.resources
