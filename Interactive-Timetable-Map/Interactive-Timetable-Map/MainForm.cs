@@ -14,8 +14,6 @@ namespace Interactive_Timetable_Map
 {
     public partial class MainForm : Form
     {
-        bool loggedIn = false;
-
         public MainForm()
         {
             InitializeComponent();
@@ -56,23 +54,6 @@ namespace Interactive_Timetable_Map
                                        Group = users.Element("Group").Value
                                    }).ToList();
             return userList;
-        }
-
-        /// Opens Login Form
-        private void loginButton_Click(object sender, EventArgs e)
-        {
-            // Checks to see if a Login Form is already open, if so, close that and open a new one
-            if (Application.OpenForms.OfType<loginForm>().Count() > 0) { Application.OpenForms.OfType<loginForm>().First().Close(); }
-            var loginForm = new loginForm();
-            loginForm.Show();
-        }
-
-        /// For testing purposes, tells you if you are logged in or not
-        public void LoginCheck(bool loggedInTemp)
-        {
-            if (loggedInTemp) { loggedIn = true; }
-            if (loggedIn) { testingLoggedInTextBox.Text = "Debug: You Are Logged In."; }
-            else { testingLoggedInTextBox.Text = "Debug: You Are Not Logged In."; }
         }
     }
 }
