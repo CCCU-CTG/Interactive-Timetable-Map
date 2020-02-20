@@ -8,12 +8,23 @@ namespace Interactive_Timetable_Map
 {
     class User
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string Surname { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string PasswordEncrypted { get; set; }
-        public string Group { get; set; }
+        string userID;
+        string firstName;
+        string surname;
+        string userName;
+        string password;
+        string passwordEncrypted;
+        string group;
+
+        public User(string ID, string fName, string sName, string uName, string pass, string passencrypted, string userGroup)
+        {
+            userID = ID;
+            firstName = fName;
+            surname = sName;
+            userName = uName;
+            password = pass;
+            passwordEncrypted = passencrypted;
+            group = userGroup;
+        }
     }    
 }
