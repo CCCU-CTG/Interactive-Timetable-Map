@@ -38,9 +38,9 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(142, 98);
+            this.loginButton.Location = new System.Drawing.Point(182, 98);
             this.loginButton.Name = "loginButton";
-            this.loginButton.Size = new System.Drawing.Size(115, 23);
+            this.loginButton.Size = new System.Drawing.Size(75, 23);
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
@@ -48,9 +48,9 @@
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(142, 127);
+            this.registerButton.Location = new System.Drawing.Point(101, 98);
             this.registerButton.Name = "registerButton";
-            this.registerButton.Size = new System.Drawing.Size(115, 23);
+            this.registerButton.Size = new System.Drawing.Size(75, 23);
             this.registerButton.TabIndex = 0;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;

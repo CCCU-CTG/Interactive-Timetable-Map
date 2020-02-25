@@ -52,7 +52,6 @@ namespace Interactive_Timetable_Map
         {
             UserXMLReader();
             ModuleTimetableXMLReader();
-            TimetableDataGridLoad();
         }
 
         private void UserXMLReader()
@@ -111,7 +110,7 @@ namespace Interactive_Timetable_Map
                 modulesList.Add(moduleNames.InnerText);
             }
 
-            for (int i = 0; i < modulesList.Count; i++)
+            for (int i = 0; i <= modulesList.Count; i++)
             {
                 tempMonday.Clear(); tempTuesday.Clear(); tempWednesday.Clear(); tempThursday.Clear(); tempFriday.Clear();
 
@@ -159,44 +158,6 @@ namespace Interactive_Timetable_Map
             if (loggedInTemp) { loggedIn = true; }
             if (loggedIn) { testingLoggedInTextBox.Text = "Debug: You Are Logged In."; }
             else { testingLoggedInTextBox.Text = "Debug: You Are Not Logged In."; }
-        }
-
-        private void TimetableDataGridLoad()
-        {
-            //Resets table
-            timetableDataGrid.Rows.Clear();
-            //Creates 10 empty rows
-            for (int i = 0; i < 10; i++)
-            {
-                timetableDataGrid.Rows.Add();
-            }
-            //Displays time for each cell
-            timetableDataGrid.Rows[0].HeaderCell.Value = "09:00";
-            timetableDataGrid.Rows[1].HeaderCell.Value = "10:00";
-            timetableDataGrid.Rows[2].HeaderCell.Value = "11:00";
-            timetableDataGrid.Rows[3].HeaderCell.Value = "12:00";
-            timetableDataGrid.Rows[4].HeaderCell.Value = "13:00";
-            timetableDataGrid.Rows[5].HeaderCell.Value = "14:00";
-            timetableDataGrid.Rows[6].HeaderCell.Value = "15:00";
-            timetableDataGrid.Rows[7].HeaderCell.Value = "16:00";
-            timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
-            timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
-            timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
-
-        }
-
-        private void EditDatabaseButton_Click(object sender, EventArgs e)
-        {
-            EditDatabaseForm DataForm = new EditDatabaseForm();
-            this.Hide();
-            DataForm.ShowDialog();
-        }
-
-        private void EditUsersButton_Click(object sender, EventArgs e)
-        {
-            EditUsersForm UserForm = new EditUsersForm();
-            this.Hide();
-            UserForm.ShowDialog();
         }
     }
 }
