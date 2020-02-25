@@ -55,3 +55,16 @@ E:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable
 E:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.CoreCompileInputs.cache
 E:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
 E:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe.config
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.pdb
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csprojAssemblyReference.cache
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.loginForm.resources
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.MainForm.resources
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.Properties.Resources.resources
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.GenerateResource.cache
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.CoreCompileInputs.cache
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.EditDatabaseForm.resources
+E:\CCCU Computer Science\Interactive-Timetable-Map-development\Interactive-Timetable-Map-development\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.EditUsersForm.resources
