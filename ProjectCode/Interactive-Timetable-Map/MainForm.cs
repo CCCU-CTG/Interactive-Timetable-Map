@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,6 +15,32 @@ namespace Interactive_Timetable_Map
 {
     public partial class MainForm : Form
     {
+        XmlDocument Modules = new XmlDocument();
+        XmlDocument Users = new XmlDocument();
+
+        // List containing Module Timetable Class objects + User Class objects
+        private List<Module_Timetable> moduleTimetableList = new List<Module_Timetable>();
+        private List<User> usersList = new List<User>();
+
+        // List containing user information
+        private List<string> userID = new List<string>();
+        private List<string> name = new List<string>();
+        private List<string> surname = new List<string>();
+        private List<string> username = new List<string>();
+        private List<string> password = new List<string>();
+        private List<string> passwordEncrypted = new List<string>();
+        private List<string> group = new List<string>();
+
+        // Lists containing Module names + schedules on each day
+        private List<string> modulesList = new List<string>();
+        private List<string> tempMonday = new List<string>();
+        private List<string> tempTuesday = new List<string>();
+        private List<string> tempWednesday = new List<string>();
+        private List<string> tempThursday = new List<string>();
+        private List<string> tempFriday = new List<string>();
+
+        private 
+
         bool loggedIn = false;
 
         public MainForm()
@@ -23,39 +50,97 @@ namespace Interactive_Timetable_Map
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            XMLReaderToUserList();
-            ///<summary>
-            ///Test for the XMLReader
-            ///</summary>
-            //int index = 3;
-            //listView1.Items.Add(userList[index].Id.ToString());
-            //listView1.Items.Add(userList[index].Name.ToString());
-            //listView1.Items.Add(userList[index].Surname.ToString());
-            //listView1.Items.Add(userList[index].Username.ToString());
-            //listView1.Items.Add(userList[index].Password.ToString());
-            //listView1.Items.Add(userList[index].PasswordEncrypted.ToString());
-            //listView1.Items.Add(userList[index].Group.ToString());
+            UserXMLReader();
+            ModuleTimetableXMLReader();
         }
 
-        /// <summary>
-        /// Reads the User Database.xml file and outputs to the User class. 
-        /// </summary>
-        /// <returns>userList</returns>
-        private List<User> XMLReaderToUserList()
+        private void UserXMLReader()
         {
-            XElement userDBXMLFile = XElement.Load(@"User Database.xml");
-            List<User> userList = (from users in userDBXMLFile.Descendants("User")
-                                   select new User
-                                   {
-                                       Id = users.Element("Id").Value,
-                                       Name = users.Element("Name").Value,
-                                       Surname = users.Element("Surname").Value,
-                                       Username = users.Element("Username").Value,
-                                       Password = users.Element("Password").Value,
-                                       PasswordEncrypted = users.Element("PasswordEncrypted").Value,
-                                       Group = users.Element("Group").Value
-                                   }).ToList();
-            return userList;
+            string directory = Directory.GetCurrentDirectory();
+            Users.Load(directory + @"\User_Database.xml");
+
+            foreach(XmlNode uID in Users.DocumentElement.SelectNodes("//ID"))
+            {
+                userID.Add(uID.InnerText);
+            }
+
+            foreach (XmlNode uName in Users.DocumentElement.SelectNodes("//Name"))
+            {
+                name.Add(uName.InnerText);
+            }
+
+            foreach (XmlNode sName in Users.DocumentElement.SelectNodes("//Surname"))
+            {
+                surname.Add(sName.InnerText);
+            }
+
+            foreach (XmlNode userName in Users.DocumentElement.SelectNodes("//Username"))
+            {
+                username.Add(userName.InnerText);
+            }
+
+            foreach (XmlNode pass in Users.DocumentElement.SelectNodes("//Password"))
+            {
+                password.Add(pass.InnerText);
+            }
+
+            foreach (XmlNode passEncrypt in Users.DocumentElement.SelectNodes("//PasswordEncrypted"))
+            {
+                passwordEncrypted.Add(passEncrypt.InnerText);
+            }
+
+            foreach (XmlNode uGroup in Users.DocumentElement.SelectNodes("//Group"))
+            {
+                group.Add(uGroup.InnerText);
+            }
+
+            for (int i = 0; i < userID.Count; i++)
+            {
+                usersList.Add(new User(userID[i], name[i], surname[i], username[i], password[i], passwordEncrypted[i], group[i]));
+            }
+        }
+
+        private void ModuleTimetableXMLReader()
+        {
+            string directory = Directory.GetCurrentDirectory();
+            Modules.Load(directory + @"\Module_Timetable_Database.xml");
+
+            foreach (XmlNode moduleNames in Modules.DocumentElement.SelectNodes("//Name"))
+            {
+                modulesList.Add(moduleNames.InnerText);
+            }
+
+            for (int i = 0; i <= modulesList.Count; i++)
+            {
+                tempMonday.Clear(); tempTuesday.Clear(); tempWednesday.Clear(); tempThursday.Clear(); tempFriday.Clear();
+
+                foreach (XmlNode monday in Modules.DocumentElement.SelectNodes(modulesList[i] + "/Monday/Time"))
+                {
+                    tempMonday.Add(monday.InnerText);
+                }
+
+                foreach (XmlNode tuesday in Modules.DocumentElement.SelectNodes(modulesList[i] + "/Tuesday/Time"))
+                {
+                    tempTuesday.Add(tuesday.InnerText);
+                }
+
+                foreach (XmlNode wednesday in Modules.DocumentElement.SelectNodes(modulesList[i] + "/Wednesday/Time"))
+                {
+                    tempWednesday.Add(wednesday.InnerText);
+                }
+
+                foreach (XmlNode thursday in Modules.DocumentElement.SelectNodes(modulesList[i] + "/Thursday/Time"))
+                {
+                    tempThursday.Add(thursday.InnerText);
+                }
+
+                foreach (XmlNode friday in Modules.DocumentElement.SelectNodes(modulesList[i] + "/Friday/Time"))
+                {
+                    tempFriday.Add(friday.InnerText);
+                }
+
+                moduleTimetableList.Add(new Module_Timetable(modulesList[i], tempMonday, tempTuesday, tempWednesday, tempThursday, tempFriday));
+            }
         }
 
         /// Opens Login Form

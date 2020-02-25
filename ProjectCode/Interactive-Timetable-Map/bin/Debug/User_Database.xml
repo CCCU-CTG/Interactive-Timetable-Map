@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Users>
 	<User>
-		<Id>0</Id>
+		<ID>0</ID>
 		<Name>Trek</Name>
 		<Surname>Kivar</Surname>
 		<Username>tk778</Username>
@@ -10,7 +10,7 @@
 		<Group>A</Group>	
 	</User>
 	<User>
-		<Id>1</Id>
+		<ID>1</ID>
 		<Name>Firat</Name>
 		<Surname>Peers</Surname>
 		<Username>fp244</Username>
@@ -19,7 +19,7 @@
 		<Group>A</Group>	
 	</User>
 	<User>
-		<Id>2</Id>
+		<ID>2</ID>
 		<Name>Jay</Name>
 		<Surname>Johnson</Surname>
 		<Username>jj134</Username>
