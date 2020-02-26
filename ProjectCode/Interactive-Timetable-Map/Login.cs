@@ -15,23 +15,38 @@ namespace Interactive_Timetable_Map
     public partial class loginForm : Form
     {
         bool loggedInTemp = false;
+        List<User> user = new List<User>();
 
-        public loginForm()
+        public loginForm(List<User> usersList)
         {
+            user = usersList;
             InitializeComponent();
+            CreateUsers();
         }
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            bool usernameFound = false;
+
             if (usernameTextBox.Text.Length < 3 || passwordTextBox.Text.Length < 5)
             {
                 MessageBox.Show("Username or Password is invaled or too short!");
+                return;
             }
-            else
+
+            for(int i = 0; i < user.Count; i++)
+            {
+                if (user[i].GetUsername == usernameTextBox.Text) { usernameFound = true; }
+            }
+
+            if (usernameFound)
             {
                 string dir = usernameTextBox.Text;
                 if (!Directory.Exists("data\\" + dir))
-                    MessageBox.Show("User {0} was not found!", dir);
+                {
+                    MessageBox.Show("User " + dir + " was not found!");
+                    return;
+                }
                 else
                 {
                     var sr = new StreamReader("data\\" + dir + "\\data.ls");
@@ -45,7 +60,7 @@ namespace Interactive_Timetable_Map
 
                     if (decusr == usernameTextBox.Text && decpass == passwordTextBox.Text)
                     {
-                        MessageBox.Show("Welcome {0} to the private area!", decusr);
+                        MessageBox.Show("Welcome " + dir + " to the private area!");
                         loggedInTemp = true;
                         // Returns loggedInTemp to LoginCheck in MainForm
                         Application.OpenForms.OfType<MainForm>().First().LoginCheck(loggedInTemp);
@@ -54,9 +69,14 @@ namespace Interactive_Timetable_Map
                     else
                     {
                         MessageBox.Show("Error user or password is wrong!");
+                        return;
                     }
-
                 }
+            }
+            else
+            {
+                MessageBox.Show("Username Not Found");
+                return;
             }
         }
 
@@ -76,7 +96,6 @@ namespace Interactive_Timetable_Map
                     return;
                 }
                 Directory.CreateDirectory("data\\" + dir);
-
                 var sw = new StreamWriter("data\\" + dir + "\\data.ls");
 
                 string encryptedusername = AesCryp.Encrypt(usernameTextBox.Text);
@@ -86,7 +105,28 @@ namespace Interactive_Timetable_Map
                 sw.WriteLine(encryptedpassword);
                 sw.Close();
 
-                MessageBox.Show("User {0} was successfully created.", usernameTextBox.Text);
+                MessageBox.Show("User " + dir + " was successfully created.");
+            }
+        }
+
+        private void CreateUsers()
+        {
+            for(int i = 0; i < user.Count; i++)
+            {
+                string dir = user[i].GetUsername;
+                // Checks to see if the username already exists, if so, abort registration
+                if (!Directory.Exists("data\\" + dir))
+                {
+                    Directory.CreateDirectory("data\\" + dir);
+                    var sw = new StreamWriter("data\\" + dir + "\\data.ls");
+
+                    string encryptedusername = AesCryp.Encrypt(user[i].GetUsername);
+                    string encryptedpassword = AesCryp.Encrypt(user[i].GetPassword);
+
+                    sw.WriteLine(encryptedusername);
+                    sw.WriteLine(encryptedpassword);
+                    sw.Close();
+                }
             }
         }
     }

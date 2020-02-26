@@ -38,20 +38,20 @@
             // 
             // loginButton
             // 
-            this.loginButton.Location = new System.Drawing.Point(182, 98);
+            this.loginButton.Location = new System.Drawing.Point(142, 98);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(75, 23);
-            this.loginButton.TabIndex = 0;
+            this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
             // registerButton
             // 
-            this.registerButton.Location = new System.Drawing.Point(101, 98);
+            this.registerButton.Location = new System.Drawing.Point(142, 127);
             this.registerButton.Name = "registerButton";
             this.registerButton.Size = new System.Drawing.Size(75, 23);
-            this.registerButton.TabIndex = 0;
+            this.registerButton.TabIndex = 3;
             this.registerButton.Text = "Register";
             this.registerButton.UseVisualStyleBackColor = true;
             this.registerButton.Click += new System.EventHandler(this.registerButton_Click);
@@ -79,14 +79,14 @@
             this.usernameTextBox.Location = new System.Drawing.Point(142, 46);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(115, 20);
-            this.usernameTextBox.TabIndex = 3;
+            this.usernameTextBox.TabIndex = 0;
             // 
             // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(143, 72);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(114, 20);
-            this.passwordTextBox.TabIndex = 3;
+            this.passwordTextBox.TabIndex = 1;
             // 
             // loginForm
             // 

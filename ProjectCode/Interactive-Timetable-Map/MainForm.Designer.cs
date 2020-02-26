@@ -29,14 +29,25 @@
         private void InitializeComponent()
         {
             this.timeTableGroupBoxUI = new System.Windows.Forms.GroupBox();
+            this.timetableDataGrid = new System.Windows.Forms.DataGridView();
+            this.Monday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userGroupBoxUI = new System.Windows.Forms.GroupBox();
-            this.loginButton = new System.Windows.Forms.Button();
+            this.editUsersButton = new System.Windows.Forms.Button();
+            this.editDatabaseButton = new System.Windows.Forms.Button();
             this.testingLoggedInTextBox = new System.Windows.Forms.TextBox();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.timeTableGroupBoxUI.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDataGrid)).BeginInit();
             this.userGroupBoxUI.SuspendLayout();
             this.SuspendLayout();
             // 
             // timeTableGroupBoxUI
             // 
+            this.timeTableGroupBoxUI.Controls.Add(this.timetableDataGrid);
             this.timeTableGroupBoxUI.Location = new System.Drawing.Point(12, 12);
             this.timeTableGroupBoxUI.Name = "timeTableGroupBoxUI";
             this.timeTableGroupBoxUI.Size = new System.Drawing.Size(593, 426);
@@ -44,8 +55,58 @@
             this.timeTableGroupBoxUI.TabStop = false;
             this.timeTableGroupBoxUI.Text = "Timetable";
             // 
+            // timetableDataGrid
+            // 
+            this.timetableDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.timetableDataGrid.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.timetableDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.timetableDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Monday,
+            this.Tuesday,
+            this.Wednesday,
+            this.Thursday,
+            this.Friday});
+            this.timetableDataGrid.Location = new System.Drawing.Point(6, 19);
+            this.timetableDataGrid.Name = "timetableDataGrid";
+            this.timetableDataGrid.ReadOnly = true;
+            this.timetableDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.timetableDataGrid.Size = new System.Drawing.Size(581, 401);
+            this.timetableDataGrid.TabIndex = 3;
+            // 
+            // Monday
+            // 
+            this.Monday.HeaderText = "Monday";
+            this.Monday.Name = "Monday";
+            this.Monday.ReadOnly = true;
+            // 
+            // Tuesday
+            // 
+            this.Tuesday.HeaderText = "Tuesday";
+            this.Tuesday.Name = "Tuesday";
+            this.Tuesday.ReadOnly = true;
+            // 
+            // Wednesday
+            // 
+            this.Wednesday.HeaderText = "Wednesday";
+            this.Wednesday.Name = "Wednesday";
+            this.Wednesday.ReadOnly = true;
+            // 
+            // Thursday
+            // 
+            this.Thursday.HeaderText = "Thursday";
+            this.Thursday.Name = "Thursday";
+            this.Thursday.ReadOnly = true;
+            // 
+            // Friday
+            // 
+            this.Friday.HeaderText = "Friday";
+            this.Friday.Name = "Friday";
+            this.Friday.ReadOnly = true;
+            // 
             // userGroupBoxUI
             // 
+            this.userGroupBoxUI.Controls.Add(this.editUsersButton);
+            this.userGroupBoxUI.Controls.Add(this.editDatabaseButton);
             this.userGroupBoxUI.Controls.Add(this.testingLoggedInTextBox);
             this.userGroupBoxUI.Controls.Add(this.loginButton);
             this.userGroupBoxUI.Location = new System.Drawing.Point(611, 12);
@@ -54,6 +115,35 @@
             this.userGroupBoxUI.TabIndex = 1;
             this.userGroupBoxUI.TabStop = false;
             this.userGroupBoxUI.Text = "User";
+            // 
+            // editUsersButton
+            // 
+            this.editUsersButton.Location = new System.Drawing.Point(6, 383);
+            this.editUsersButton.Name = "editUsersButton";
+            this.editUsersButton.Size = new System.Drawing.Size(164, 23);
+            this.editUsersButton.TabIndex = 3;
+            this.editUsersButton.Text = "Edit Users";
+            this.editUsersButton.UseVisualStyleBackColor = true;
+            this.editUsersButton.Click += new System.EventHandler(this.EditUsersButton_Click);
+            // 
+            // editDatabaseButton
+            // 
+            this.editDatabaseButton.Location = new System.Drawing.Point(6, 354);
+            this.editDatabaseButton.Name = "editDatabaseButton";
+            this.editDatabaseButton.Size = new System.Drawing.Size(164, 23);
+            this.editDatabaseButton.TabIndex = 2;
+            this.editDatabaseButton.Text = "Edit Database";
+            this.editDatabaseButton.UseVisualStyleBackColor = true;
+            this.editDatabaseButton.Click += new System.EventHandler(this.EditDatabaseButton_Click);
+            // 
+            // testingLoggedInTextBox
+            // 
+            this.testingLoggedInTextBox.Location = new System.Drawing.Point(7, 50);
+            this.testingLoggedInTextBox.Name = "testingLoggedInTextBox";
+            this.testingLoggedInTextBox.ReadOnly = true;
+            this.testingLoggedInTextBox.Size = new System.Drawing.Size(164, 20);
+            this.testingLoggedInTextBox.TabIndex = 1;
+            this.testingLoggedInTextBox.Text = "TEMP";
             // 
             // loginButton
             // 
@@ -64,15 +154,6 @@
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
-            // 
-            // testingLoggedInTextBox
-            // 
-            this.testingLoggedInTextBox.Location = new System.Drawing.Point(7, 50);
-            this.testingLoggedInTextBox.Name = "testingLoggedInTextBox";
-            this.testingLoggedInTextBox.ReadOnly = true;
-            this.testingLoggedInTextBox.Size = new System.Drawing.Size(164, 20);
-            this.testingLoggedInTextBox.TabIndex = 1;
-            this.testingLoggedInTextBox.Text = "TEMP";
             // 
             // MainForm
             // 
@@ -85,6 +166,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.timeTableGroupBoxUI.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.timetableDataGrid)).EndInit();
             this.userGroupBoxUI.ResumeLayout(false);
             this.userGroupBoxUI.PerformLayout();
             this.ResumeLayout(false);
@@ -97,6 +180,14 @@
         private System.Windows.Forms.GroupBox userGroupBoxUI;
         private System.Windows.Forms.Button loginButton;
         private System.Windows.Forms.TextBox testingLoggedInTextBox;
+        private System.Windows.Forms.DataGridView timetableDataGrid;
+        private System.Windows.Forms.Button editUsersButton;
+        private System.Windows.Forms.Button editDatabaseButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Monday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tuesday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Wednesday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
     }
 }
 
