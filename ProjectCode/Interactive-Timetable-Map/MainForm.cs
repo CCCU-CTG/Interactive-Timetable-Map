@@ -15,32 +15,11 @@ namespace Interactive_Timetable_Map
 {
     public partial class MainForm : Form
     {
-        XmlDocument Modules = new XmlDocument();
-        XmlDocument Users = new XmlDocument();
-
         // List containing Module Timetable Class objects + User Class objects
-        private List<Module_Timetable> moduleTimetableList = new List<Module_Timetable>();
-        private List<User> usersList = new List<User>();
+        List<User> usersList = new List<User>();
+        List<Module_Timetable> moduleTimetableList = new List<Module_Timetable>();
 
-        // List containing user information
-        private List<string> userID = new List<string>();
-        private List<string> name = new List<string>();
-        private List<string> surname = new List<string>();
-        private List<string> username = new List<string>();
-        private List<string> password = new List<string>();
-        private List<string> passwordEncrypted = new List<string>();
-        private List<string> group = new List<string>();
-
-        // Lists containing Module names + schedules on each day
-        private List<string> modulesList = new List<string>();
-        private List<string> tempMonday = new List<string>();
-        private List<string> tempTuesday = new List<string>();
-        private List<string> tempWednesday = new List<string>();
-        private List<string> tempThursday = new List<string>();
-        private List<string> tempFriday = new List<string>();
-
-        private 
-
+        // DEBUG, is has the login function worked?
         bool loggedIn = false;
 
         public MainForm()
@@ -56,7 +35,17 @@ namespace Interactive_Timetable_Map
 
         private void UserXMLReader()
         {
-            string directory = Directory.GetCurrentDirectory();
+            XmlDocument Users = new XmlDocument();
+
+            // List containing user information
+            List<string> userID = new List<string>();
+            List<string> name = new List<string>();
+            List<string> surname = new List<string>();
+            List<string> username = new List<string>();
+            List<string> password = new List<string>();
+            List<string> group = new List<string>();
+
+            string directory = Directory.GetCurrentDirectory() + "/Databases";
             Users.Load(directory + @"\User_Database.xml");
 
             foreach(XmlNode uID in Users.DocumentElement.SelectNodes("//ID"))
@@ -84,11 +73,6 @@ namespace Interactive_Timetable_Map
                 password.Add(pass.InnerText);
             }
 
-            foreach (XmlNode passEncrypt in Users.DocumentElement.SelectNodes("//PasswordEncrypted"))
-            {
-                passwordEncrypted.Add(passEncrypt.InnerText);
-            }
-
             foreach (XmlNode uGroup in Users.DocumentElement.SelectNodes("//Group"))
             {
                 group.Add(uGroup.InnerText);
@@ -96,13 +80,23 @@ namespace Interactive_Timetable_Map
 
             for (int i = 0; i < userID.Count; i++)
             {
-                usersList.Add(new User(userID[i], name[i], surname[i], username[i], password[i], passwordEncrypted[i], group[i]));
+                usersList.Add(new User(userID[i], name[i], surname[i], username[i], password[i], group[i]));
             }
         }
 
         private void ModuleTimetableXMLReader()
         {
-            string directory = Directory.GetCurrentDirectory();
+            XmlDocument Modules = new XmlDocument();
+
+            // Lists containing Module names + schedules on each day
+            List<string> modulesList = new List<string>();
+            List<string> tempMonday = new List<string>();
+            List<string> tempTuesday = new List<string>();
+            List<string> tempWednesday = new List<string>();
+            List<string> tempThursday = new List<string>();
+            List<string> tempFriday = new List<string>();
+
+            string directory = Directory.GetCurrentDirectory() + "/Databases";
             Modules.Load(directory + @"\Module_Timetable_Database.xml");
 
             foreach (XmlNode moduleNames in Modules.DocumentElement.SelectNodes("//Name"))
@@ -110,7 +104,7 @@ namespace Interactive_Timetable_Map
                 modulesList.Add(moduleNames.InnerText);
             }
 
-            for (int i = 0; i <= modulesList.Count; i++)
+            for (int i = 0; i < modulesList.Count; i++)
             {
                 tempMonday.Clear(); tempTuesday.Clear(); tempWednesday.Clear(); tempThursday.Clear(); tempFriday.Clear();
 
@@ -148,7 +142,7 @@ namespace Interactive_Timetable_Map
         {
             // Checks to see if a Login Form is already open, if so, close that and open a new one
             if (Application.OpenForms.OfType<loginForm>().Count() > 0) { Application.OpenForms.OfType<loginForm>().First().Close(); }
-            var loginForm = new loginForm();
+            var loginForm = new loginForm(usersList);
             loginForm.Show();
         }
 

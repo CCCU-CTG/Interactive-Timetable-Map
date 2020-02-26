@@ -6,7 +6,6 @@
 		<Surname>Kivar</Surname>
 		<Username>tk778</Username>
 		<Password>Smand1</Password>
-		<PasswordEncrypted>0ad</PasswordEncrypted>
 		<Group>A</Group>	
 	</User>
 	<User>
@@ -15,7 +14,6 @@
 		<Surname>Peers</Surname>
 		<Username>fp244</Username>
 		<Password>Catsanddogs</Password>
-		<PasswordEncrypted>1sghg</PasswordEncrypted>
 		<Group>A</Group>	
 	</User>
 	<User>
@@ -24,7 +22,6 @@
 		<Surname>Johnson</Surname>
 		<Username>jj134</Username>
 		<Password>chickendinner</Password>
-		<PasswordEncrypted>2hjfkeh</PasswordEncrypted>
 		<Group>B</Group>	
 	</User>
 </Users>
