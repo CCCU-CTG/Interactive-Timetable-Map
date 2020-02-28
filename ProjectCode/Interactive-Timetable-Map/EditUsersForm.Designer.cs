@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.userGroupBoxUI = new System.Windows.Forms.GroupBox();
+            this.changePasswordButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
-            this.buttonNewAppointment = new System.Windows.Forms.Button();
-            this.buttonAddPatient = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.usersGroupBoxUI = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.addUserButton = new System.Windows.Forms.Button();
+            this.removeUserButton = new System.Windows.Forms.Button();
+            this.editUsersGroupBoxUI = new System.Windows.Forms.GroupBox();
+            this.textBoxGroup = new System.Windows.Forms.TextBox();
+            this.labelGroup = new System.Windows.Forms.Label();
+            this.textBoxUsername = new System.Windows.Forms.TextBox();
+            this.labelUsername = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.labelFirstName = new System.Windows.Forms.Label();
@@ -45,21 +45,31 @@
             this.comboBoxID = new System.Windows.Forms.ComboBox();
             this.labelID = new System.Windows.Forms.Label();
             this.userGroupBoxUI.SuspendLayout();
-            this.usersGroupBoxUI.SuspendLayout();
+            this.editUsersGroupBoxUI.SuspendLayout();
             this.SuspendLayout();
             // 
             // userGroupBoxUI
             // 
-            this.userGroupBoxUI.Controls.Add(this.button1);
+            this.userGroupBoxUI.Controls.Add(this.changePasswordButton);
             this.userGroupBoxUI.Controls.Add(this.backButton);
-            this.userGroupBoxUI.Controls.Add(this.buttonAddPatient);
-            this.userGroupBoxUI.Controls.Add(this.buttonNewAppointment);
+            this.userGroupBoxUI.Controls.Add(this.addUserButton);
+            this.userGroupBoxUI.Controls.Add(this.removeUserButton);
             this.userGroupBoxUI.Location = new System.Drawing.Point(611, 12);
             this.userGroupBoxUI.Name = "userGroupBoxUI";
             this.userGroupBoxUI.Size = new System.Drawing.Size(177, 184);
             this.userGroupBoxUI.TabIndex = 3;
             this.userGroupBoxUI.TabStop = false;
             this.userGroupBoxUI.Text = "User";
+            // 
+            // changePasswordButton
+            // 
+            this.changePasswordButton.Location = new System.Drawing.Point(6, 133);
+            this.changePasswordButton.Margin = new System.Windows.Forms.Padding(2);
+            this.changePasswordButton.Name = "changePasswordButton";
+            this.changePasswordButton.Size = new System.Drawing.Size(164, 26);
+            this.changePasswordButton.TabIndex = 13;
+            this.changePasswordButton.Text = "Change Password";
+            this.changePasswordButton.UseVisualStyleBackColor = true;
             // 
             // backButton
             // 
@@ -71,92 +81,82 @@
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // buttonNewAppointment
+            // addUserButton
             // 
-            this.buttonNewAppointment.Location = new System.Drawing.Point(6, 103);
-            this.buttonNewAppointment.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNewAppointment.Name = "buttonNewAppointment";
-            this.buttonNewAppointment.Size = new System.Drawing.Size(164, 26);
-            this.buttonNewAppointment.TabIndex = 11;
-            this.buttonNewAppointment.Text = "Remove User";
-            this.buttonNewAppointment.UseVisualStyleBackColor = true;
+            this.addUserButton.Location = new System.Drawing.Point(6, 73);
+            this.addUserButton.Margin = new System.Windows.Forms.Padding(2);
+            this.addUserButton.Name = "addUserButton";
+            this.addUserButton.Size = new System.Drawing.Size(164, 26);
+            this.addUserButton.TabIndex = 10;
+            this.addUserButton.Text = "Add User";
+            this.addUserButton.UseVisualStyleBackColor = true;
             // 
-            // buttonAddPatient
+            // removeUserButton
             // 
-            this.buttonAddPatient.Location = new System.Drawing.Point(6, 73);
-            this.buttonAddPatient.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonAddPatient.Name = "buttonAddPatient";
-            this.buttonAddPatient.Size = new System.Drawing.Size(164, 26);
-            this.buttonAddPatient.TabIndex = 10;
-            this.buttonAddPatient.Text = "Add User";
-            this.buttonAddPatient.UseVisualStyleBackColor = true;
+            this.removeUserButton.Location = new System.Drawing.Point(6, 103);
+            this.removeUserButton.Margin = new System.Windows.Forms.Padding(2);
+            this.removeUserButton.Name = "removeUserButton";
+            this.removeUserButton.Size = new System.Drawing.Size(164, 26);
+            this.removeUserButton.TabIndex = 11;
+            this.removeUserButton.Text = "Remove User";
+            this.removeUserButton.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // editUsersGroupBoxUI
             // 
-            this.button1.Location = new System.Drawing.Point(6, 133);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(164, 26);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Change Password";
-            this.button1.UseVisualStyleBackColor = true;
+            this.editUsersGroupBoxUI.Controls.Add(this.textBoxGroup);
+            this.editUsersGroupBoxUI.Controls.Add(this.labelGroup);
+            this.editUsersGroupBoxUI.Controls.Add(this.textBoxUsername);
+            this.editUsersGroupBoxUI.Controls.Add(this.labelUsername);
+            this.editUsersGroupBoxUI.Controls.Add(this.textBoxLastName);
+            this.editUsersGroupBoxUI.Controls.Add(this.textBoxFirstName);
+            this.editUsersGroupBoxUI.Controls.Add(this.labelFirstName);
+            this.editUsersGroupBoxUI.Controls.Add(this.labelLastName);
+            this.editUsersGroupBoxUI.Controls.Add(this.comboBoxID);
+            this.editUsersGroupBoxUI.Controls.Add(this.labelID);
+            this.editUsersGroupBoxUI.Location = new System.Drawing.Point(12, 12);
+            this.editUsersGroupBoxUI.Name = "editUsersGroupBoxUI";
+            this.editUsersGroupBoxUI.Size = new System.Drawing.Size(593, 184);
+            this.editUsersGroupBoxUI.TabIndex = 2;
+            this.editUsersGroupBoxUI.TabStop = false;
+            this.editUsersGroupBoxUI.Text = "Edit Users";
             // 
-            // usersGroupBoxUI
+            // textBoxGroup
             // 
-            this.usersGroupBoxUI.Controls.Add(this.textBox2);
-            this.usersGroupBoxUI.Controls.Add(this.label2);
-            this.usersGroupBoxUI.Controls.Add(this.textBox1);
-            this.usersGroupBoxUI.Controls.Add(this.label1);
-            this.usersGroupBoxUI.Controls.Add(this.textBoxLastName);
-            this.usersGroupBoxUI.Controls.Add(this.textBoxFirstName);
-            this.usersGroupBoxUI.Controls.Add(this.labelFirstName);
-            this.usersGroupBoxUI.Controls.Add(this.labelLastName);
-            this.usersGroupBoxUI.Controls.Add(this.comboBoxID);
-            this.usersGroupBoxUI.Controls.Add(this.labelID);
-            this.usersGroupBoxUI.Location = new System.Drawing.Point(12, 12);
-            this.usersGroupBoxUI.Name = "usersGroupBoxUI";
-            this.usersGroupBoxUI.Size = new System.Drawing.Size(593, 184);
-            this.usersGroupBoxUI.TabIndex = 2;
-            this.usersGroupBoxUI.TabStop = false;
-            this.usersGroupBoxUI.Text = "Edit Users";
+            this.textBoxGroup.Location = new System.Drawing.Point(349, 107);
+            this.textBoxGroup.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxGroup.Name = "textBoxGroup";
+            this.textBoxGroup.ReadOnly = true;
+            this.textBoxGroup.Size = new System.Drawing.Size(156, 20);
+            this.textBoxGroup.TabIndex = 29;
             // 
-            // textBox2
+            // labelGroup
             // 
-            this.textBox2.Location = new System.Drawing.Point(349, 107);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(156, 20);
-            this.textBox2.TabIndex = 29;
+            this.labelGroup.AutoSize = true;
+            this.labelGroup.Location = new System.Drawing.Point(300, 107);
+            this.labelGroup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelGroup.Name = "labelGroup";
+            this.labelGroup.Size = new System.Drawing.Size(39, 13);
+            this.labelGroup.TabIndex = 28;
+            this.labelGroup.Text = "Group:";
             // 
-            // label2
+            // textBoxUsername
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(300, 107);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 13);
-            this.label2.TabIndex = 28;
-            this.label2.Text = "Group:";
+            this.textBoxUsername.Location = new System.Drawing.Point(349, 73);
+            this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxUsername.Name = "textBoxUsername";
+            this.textBoxUsername.ReadOnly = true;
+            this.textBoxUsername.Size = new System.Drawing.Size(156, 20);
+            this.textBoxUsername.TabIndex = 27;
             // 
-            // textBox1
+            // labelUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(349, 73);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(156, 20);
-            this.textBox1.TabIndex = 27;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(281, 73);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(58, 13);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Username:";
+            this.labelUsername.AutoSize = true;
+            this.labelUsername.Location = new System.Drawing.Point(281, 73);
+            this.labelUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelUsername.Name = "labelUsername";
+            this.labelUsername.Size = new System.Drawing.Size(58, 13);
+            this.labelUsername.TabIndex = 26;
+            this.labelUsername.Text = "Username:";
             // 
             // textBoxLastName
             // 
@@ -221,13 +221,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 207);
             this.Controls.Add(this.userGroupBoxUI);
-            this.Controls.Add(this.usersGroupBoxUI);
+            this.Controls.Add(this.editUsersGroupBoxUI);
             this.Name = "EditUsersForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditUsersForm";
             this.userGroupBoxUI.ResumeLayout(false);
-            this.usersGroupBoxUI.ResumeLayout(false);
-            this.usersGroupBoxUI.PerformLayout();
+            this.editUsersGroupBoxUI.ResumeLayout(false);
+            this.editUsersGroupBoxUI.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -236,14 +236,14 @@
 
         private System.Windows.Forms.GroupBox userGroupBoxUI;
         private System.Windows.Forms.Button backButton;
-        private System.Windows.Forms.Button buttonNewAppointment;
-        private System.Windows.Forms.Button buttonAddPatient;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox usersGroupBoxUI;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button removeUserButton;
+        private System.Windows.Forms.Button addUserButton;
+        private System.Windows.Forms.Button changePasswordButton;
+        private System.Windows.Forms.GroupBox editUsersGroupBoxUI;
+        private System.Windows.Forms.TextBox textBoxGroup;
+        private System.Windows.Forms.Label labelGroup;
+        private System.Windows.Forms.TextBox textBoxUsername;
+        private System.Windows.Forms.Label labelUsername;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Label labelFirstName;
