@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Users>
+	<User>
+		<ID>0</ID>
+		<Name>Trek</Name>
+		<Surname>Kivar</Surname>
+		<Username>tk778</Username>
+		<Password>Smand1</Password>
+		<Group>A</Group>	
+	</User>
+	<User>
+		<ID>1</ID>
+		<Name>Firat</Name>
+		<Surname>Peers</Surname>
+		<Username>fp244</Username>
+		<Password>Catsanddogs</Password>
+		<Group>A</Group>	
+	</User>
+	<User>
+		<ID>2</ID>
+		<Name>Jay</Name>
+		<Surname>Johnson</Surname>
+		<Username>jj134</Username>
+		<Password>chickendinner</Password>
+		<Group>B</Group>	
+	</User>
+</Users>
