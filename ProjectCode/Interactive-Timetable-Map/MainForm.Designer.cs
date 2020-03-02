@@ -40,6 +40,7 @@
             this.editDatabaseButton = new System.Windows.Forms.Button();
             this.testingLoggedInTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.timeTableGroupBoxUI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableDataGrid)).BeginInit();
             this.userGroupBoxUI.SuspendLayout();
@@ -72,6 +73,7 @@
             this.timetableDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.timetableDataGrid.Size = new System.Drawing.Size(581, 401);
             this.timetableDataGrid.TabIndex = 3;
+            this.timetableDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.timetableDataGrid_CellContentClick);
             // 
             // Monday
             // 
@@ -105,6 +107,7 @@
             // 
             // userGroupBoxUI
             // 
+            this.userGroupBoxUI.Controls.Add(this.logoutButton);
             this.userGroupBoxUI.Controls.Add(this.editUsersButton);
             this.userGroupBoxUI.Controls.Add(this.editDatabaseButton);
             this.userGroupBoxUI.Controls.Add(this.testingLoggedInTextBox);
@@ -138,7 +141,7 @@
             // 
             // testingLoggedInTextBox
             // 
-            this.testingLoggedInTextBox.Location = new System.Drawing.Point(7, 50);
+            this.testingLoggedInTextBox.Location = new System.Drawing.Point(7, 78);
             this.testingLoggedInTextBox.Name = "testingLoggedInTextBox";
             this.testingLoggedInTextBox.ReadOnly = true;
             this.testingLoggedInTextBox.Size = new System.Drawing.Size(164, 20);
@@ -154,6 +157,15 @@
             this.loginButton.Text = "Login";
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(6, 49);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(164, 23);
+            this.logoutButton.TabIndex = 2;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -188,6 +200,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Wednesday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
+        private System.Windows.Forms.Button logoutButton;
     }
 }
 

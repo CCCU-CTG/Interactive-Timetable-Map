@@ -61,7 +61,7 @@ namespace Interactive_Timetable_Map
                     if (decusr == usernameTextBox.Text && decpass == passwordTextBox.Text)
                     {
                         MessageBox.Show("Welcome " + dir + " to the private area!");
-                        loggedInTemp = true;
+                        loggedInTemp = true;                        
                         // Returns loggedInTemp to LoginCheck in MainForm
                         Application.OpenForms.OfType<MainForm>().First().LoginCheck(loggedInTemp);
                         this.Close();
@@ -129,5 +129,7 @@ namespace Interactive_Timetable_Map
                 }
             }
         }
+
+
     }
 }
