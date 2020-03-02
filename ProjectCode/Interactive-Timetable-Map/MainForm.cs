@@ -201,5 +201,11 @@ namespace Interactive_Timetable_Map
         {
 
         }
+
+        private void helpButton_Click(object sender, EventArgs e)
+        {
+            var HelpForm = new HelpForm();
+            HelpForm.Show();
+        }
     }
 }
