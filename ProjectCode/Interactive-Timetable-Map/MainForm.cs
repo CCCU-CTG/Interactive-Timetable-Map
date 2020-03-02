@@ -32,6 +32,10 @@ namespace Interactive_Timetable_Map
             UserXMLReader();
             ModuleTimetableXMLReader();
             TimetableDataGridLoad();
+            LoginCheck(loggedIn);            
+            
+            editDatabaseButton.Enabled = false;
+            editUsersButton.Enabled = false;
         }
 
         private void UserXMLReader()
@@ -150,9 +154,9 @@ namespace Interactive_Timetable_Map
         /// For testing purposes, tells you if you are logged in or not
         public void LoginCheck(bool loggedInTemp)
         {
-            if (loggedInTemp) { loggedIn = true; }
+            if (loggedInTemp) { loggedIn = true; loginButton.Enabled = false; logoutButton.Enabled = true; }
             if (loggedIn) { testingLoggedInTextBox.Text = "Debug: You Are Logged In."; }
-            else { testingLoggedInTextBox.Text = "Debug: You Are Not Logged In."; }
+            else { testingLoggedInTextBox.Text = "Debug: You Are Not Logged In."; logoutButton.Enabled = false; }
         }
 
         private void TimetableDataGridLoad()
@@ -191,6 +195,11 @@ namespace Interactive_Timetable_Map
             EditUsersForm UserForm = new EditUsersForm();
             this.Hide();
             UserForm.ShowDialog();
+        }
+
+        private void timetableDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
