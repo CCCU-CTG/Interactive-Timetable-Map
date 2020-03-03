@@ -36,11 +36,12 @@
             this.Thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userGroupBoxUI = new System.Windows.Forms.GroupBox();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.editUsersButton = new System.Windows.Forms.Button();
             this.editDatabaseButton = new System.Windows.Forms.Button();
             this.testingLoggedInTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
-            this.logoutButton = new System.Windows.Forms.Button();
+            this.helpButton = new System.Windows.Forms.Button();
             this.timeTableGroupBoxUI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableDataGrid)).BeginInit();
             this.userGroupBoxUI.SuspendLayout();
@@ -107,6 +108,7 @@
             // 
             // userGroupBoxUI
             // 
+            this.userGroupBoxUI.Controls.Add(this.helpButton);
             this.userGroupBoxUI.Controls.Add(this.logoutButton);
             this.userGroupBoxUI.Controls.Add(this.editUsersButton);
             this.userGroupBoxUI.Controls.Add(this.editDatabaseButton);
@@ -118,6 +120,15 @@
             this.userGroupBoxUI.TabIndex = 1;
             this.userGroupBoxUI.TabStop = false;
             this.userGroupBoxUI.Text = "User";
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(6, 49);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(164, 23);
+            this.logoutButton.TabIndex = 2;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
             // 
             // editUsersButton
             // 
@@ -158,14 +169,15 @@
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // logoutButton
+            // helpButton
             // 
-            this.logoutButton.Location = new System.Drawing.Point(6, 49);
-            this.logoutButton.Name = "logoutButton";
-            this.logoutButton.Size = new System.Drawing.Size(164, 23);
-            this.logoutButton.TabIndex = 2;
-            this.logoutButton.Text = "Logout";
-            this.logoutButton.UseVisualStyleBackColor = true;
+            this.helpButton.Location = new System.Drawing.Point(7, 325);
+            this.helpButton.Name = "helpButton";
+            this.helpButton.Size = new System.Drawing.Size(163, 23);
+            this.helpButton.TabIndex = 4;
+            this.helpButton.Text = "Help";
+            this.helpButton.UseVisualStyleBackColor = true;
+            this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
             // MainForm
             // 
@@ -201,6 +213,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
         private System.Windows.Forms.Button logoutButton;
+        private System.Windows.Forms.Button helpButton;
     }
 }
 
