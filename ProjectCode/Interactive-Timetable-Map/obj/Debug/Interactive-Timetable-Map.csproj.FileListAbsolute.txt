@@ -93,3 +93,17 @@ C:\Uni\Year 2 - Computer Science\Software Engineering\Interactive-Timetable-Map\
 C:\Uni\Year 2 - Computer Science\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
 C:\Uni\Year 2 - Computer Science\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
 C:\Uni\Year 2 - Computer Science\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.HelpForm.resources
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe.config
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.pdb
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csprojAssemblyReference.cache
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.EditDatabaseForm.resources
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.EditUsersForm.resources
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.HelpForm.resources
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.loginForm.resources
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.MainForm.resources
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.Properties.Resources.resources
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.GenerateResource.cache
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.CoreCompileInputs.cache
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
+D:\Uni\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
