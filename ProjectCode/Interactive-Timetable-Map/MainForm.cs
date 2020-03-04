@@ -17,10 +17,13 @@ namespace Interactive_Timetable_Map
     {
         // List containing Module Timetable Class objects + User Class objects
         List<User> usersList = new List<User>();
+        User currentUser;
+
         List<Module_Timetable> moduleTimetableList = new List<Module_Timetable>();
 
         // DEBUG, is has the login function worked?
         bool loggedIn = false;
+        bool adminLoggedIn = false;
 
         public MainForm()
         {
@@ -31,8 +34,7 @@ namespace Interactive_Timetable_Map
         {
             UserXMLReader();
             ModuleTimetableXMLReader();
-            TimetableDataGridLoad();
-            LoginCheck(loggedIn);            
+            LoginCheck(loggedIn, adminLoggedIn, currentUser);  
             
             editDatabaseButton.Enabled = false;
             editUsersButton.Enabled = false;
@@ -49,6 +51,7 @@ namespace Interactive_Timetable_Map
             List<string> username = new List<string>();
             List<string> password = new List<string>();
             List<string> group = new List<string>();
+            List<bool> admin = new List<bool>();
 
             string directory = Directory.GetCurrentDirectory() + "/Databases";
             Users.Load(directory + @"\User_Database.xml");
@@ -83,9 +86,15 @@ namespace Interactive_Timetable_Map
                 group.Add(uGroup.InnerText);
             }
 
+            foreach (XmlNode Admin in Users.DocumentElement.SelectNodes("//Admin"))
+            {
+                if(Admin.InnerText == "Y") { admin.Add(true); }
+                else { admin.Add(false); }
+            }
+
             for (int i = 0; i < userID.Count; i++)
             {
-                usersList.Add(new User(userID[i], name[i], surname[i], username[i], password[i], group[i]));
+                usersList.Add(new User(userID[i], name[i], surname[i], username[i], password[i], group[i], admin[i]));
             }
         }
 
@@ -152,35 +161,72 @@ namespace Interactive_Timetable_Map
         }
 
         /// For testing purposes, tells you if you are logged in or not
-        public void LoginCheck(bool loggedInTemp)
+        public void LoginCheck(bool loggedInTemp, bool adminLoggedInTemp, User currentUserTemp)
         {
             if (loggedInTemp) { loggedIn = true; loginButton.Enabled = false; logoutButton.Enabled = true; }
             if (loggedIn) { testingLoggedInTextBox.Text = "Debug: You Are Logged In."; }
             else { testingLoggedInTextBox.Text = "Debug: You Are Not Logged In."; logoutButton.Enabled = false; }
+
+            if (adminLoggedInTemp) { adminLoggedIn = true; }
+            if (adminLoggedIn) { testingLoggedInTextBox.Text = "Debug: You Are Logged In As Admin."; }
+
+            currentUser = currentUserTemp;
+            TimetableDataGridLoad();
         }
 
         private void TimetableDataGridLoad()
         {
-            //Resets table
-            timetableDataGrid.Rows.Clear();
-            //Creates 10 empty rows
-            for (int i = 0; i < 10; i++)
-            {
-                timetableDataGrid.Rows.Add();
-            }
-            //Displays time for each cell
-            timetableDataGrid.Rows[0].HeaderCell.Value = "09:00";
-            timetableDataGrid.Rows[1].HeaderCell.Value = "10:00";
-            timetableDataGrid.Rows[2].HeaderCell.Value = "11:00";
-            timetableDataGrid.Rows[3].HeaderCell.Value = "12:00";
-            timetableDataGrid.Rows[4].HeaderCell.Value = "13:00";
-            timetableDataGrid.Rows[5].HeaderCell.Value = "14:00";
-            timetableDataGrid.Rows[6].HeaderCell.Value = "15:00";
-            timetableDataGrid.Rows[7].HeaderCell.Value = "16:00";
-            timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
-            timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
-            timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
+            int selectedModule = 0;
 
+            if (loggedIn)
+            {
+                for (int i = 0; i < moduleTimetableList.Count; i++)
+                {
+                    if (currentUser.GetModule == moduleTimetableList[i].GetModuleName) { selectedModule = i; }
+                }
+
+                //Resets table
+                timetableDataGrid.Rows.Clear();
+                //Creates 11 empty rows
+                for (int i = 0; i < 11; i++)
+                {
+                    timetableDataGrid.Rows.Add
+                        (moduleTimetableList[selectedModule].GetMonday[i],
+                        moduleTimetableList[selectedModule].GetTuesday[i],
+                        moduleTimetableList[selectedModule].GetWednesday[i],
+                        moduleTimetableList[selectedModule].GetThursday[i],
+                        moduleTimetableList[selectedModule].GetFriday[i]);
+                }
+
+                timetableDataGrid.Rows[0].HeaderCell.Value = "09:00";
+                timetableDataGrid.Rows[1].HeaderCell.Value = "10:00";
+                timetableDataGrid.Rows[2].HeaderCell.Value = "11:00";
+                timetableDataGrid.Rows[3].HeaderCell.Value = "12:00";
+                timetableDataGrid.Rows[4].HeaderCell.Value = "13:00";
+                timetableDataGrid.Rows[5].HeaderCell.Value = "14:00";
+                timetableDataGrid.Rows[6].HeaderCell.Value = "15:00";
+                timetableDataGrid.Rows[7].HeaderCell.Value = "16:00";
+                timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
+                timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
+                timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
+            }
+            else
+            {
+                for (int i = 0; i < 10; i++) { timetableDataGrid.Rows.Add(); }
+
+                //Displays time for each cell
+                timetableDataGrid.Rows[0].HeaderCell.Value = "09:00";
+                timetableDataGrid.Rows[1].HeaderCell.Value = "10:00";
+                timetableDataGrid.Rows[2].HeaderCell.Value = "11:00";
+                timetableDataGrid.Rows[3].HeaderCell.Value = "12:00";
+                timetableDataGrid.Rows[4].HeaderCell.Value = "13:00";
+                timetableDataGrid.Rows[5].HeaderCell.Value = "14:00";
+                timetableDataGrid.Rows[6].HeaderCell.Value = "15:00";
+                timetableDataGrid.Rows[7].HeaderCell.Value = "16:00";
+                timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
+                timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
+                timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
+            }
         }
 
         private void EditDatabaseButton_Click(object sender, EventArgs e)

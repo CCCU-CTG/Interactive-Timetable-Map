@@ -2,26 +2,38 @@
 <Users>
 	<User>
 		<ID>0</ID>
+		<Name></Name>
+		<Surname></Surname>
+		<Username>admin</Username>
+		<Password>admin</Password>
+		<Group></Group>
+		<Admin>Y</Admin>
+	</User>
+	<User>
+		<ID>1</ID>
 		<Name>Trek</Name>
 		<Surname>Kivar</Surname>
 		<Username>tk778</Username>
 		<Password>Smand1</Password>
-		<Group>A</Group>	
+		<Group>Computer_Science_A</Group>
+		<Admin>N</Admin>	
 	</User>
 	<User>
-		<ID>1</ID>
+		<ID>2</ID>
 		<Name>Firat</Name>
 		<Surname>Peers</Surname>
 		<Username>fp244</Username>
 		<Password>Catsanddogs</Password>
-		<Group>A</Group>	
+		<Group>Computing_A</Group>
+		<Admin>N</Admin>
 	</User>
 	<User>
-		<ID>2</ID>
+		<ID>3</ID>
 		<Name>Jay</Name>
 		<Surname>Johnson</Surname>
 		<Username>jj134</Username>
 		<Password>chickendinner</Password>
-		<Group>B</Group>	
+		<Group>Computer_Science_B</Group>
+		<Admin>N</Admin>
 	</User>
 </Users>
