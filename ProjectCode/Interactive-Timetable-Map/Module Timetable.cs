@@ -27,5 +27,12 @@ namespace Interactive_Timetable_Map
                 Friday.Add(fDay[i]);
             }
         }
+
+        public string GetModuleName { get { return moduleName; } }
+        public List<string> GetMonday { get { return Monday; } }
+        public List<string> GetTuesday { get { return Tuesday; } }
+        public List<string> GetWednesday { get { return Wednesday; } }
+        public List<string> GetThursday { get { return Thursday; } }
+        public List<string> GetFriday { get { return Friday; } }
     }
 }

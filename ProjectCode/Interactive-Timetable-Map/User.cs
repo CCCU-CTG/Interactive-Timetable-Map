@@ -13,16 +13,18 @@ namespace Interactive_Timetable_Map
         string surname;
         string userName;
         string password;
-        string group;
+        string module;
+        bool admin;
 
-        public User(string ID, string fName, string sName, string uName, string pass, string userGroup)
+        public User(string ID, string fName, string sName, string uName, string pass, string userModule, bool Admin)
         {
             userID = ID;
             firstName = fName;
             surname = sName;
             userName = uName;
             password = pass;
-            group = userGroup;
+            module = userModule;
+            admin = Admin;
         }
 
         public string GetPatientID { get { return userID; } }
@@ -30,6 +32,6 @@ namespace Interactive_Timetable_Map
         public string GetSurname { get { return surname; } }
         public string GetUsername { get { return userName; } }
         public string GetPassword { get { return password; } }
-        public string GetGroup { get { return group; } }
+        public string GetModule { get { return module; } }
     }    
 }

@@ -54,7 +54,7 @@
             this.userGroupBoxUI.Controls.Add(this.removeModuleButton);
             this.userGroupBoxUI.Controls.Add(this.addModuleButton);
             this.userGroupBoxUI.Controls.Add(this.backButton);
-            this.userGroupBoxUI.Location = new System.Drawing.Point(276, 12);
+            this.userGroupBoxUI.Location = new System.Drawing.Point(611, 12);
             this.userGroupBoxUI.Name = "userGroupBoxUI";
             this.userGroupBoxUI.Size = new System.Drawing.Size(177, 237);
             this.userGroupBoxUI.TabIndex = 3;
@@ -63,7 +63,7 @@
             // 
             // removeModuleButton
             // 
-            this.removeModuleButton.Location = new System.Drawing.Point(9, 208);
+            this.removeModuleButton.Location = new System.Drawing.Point(6, 112);
             this.removeModuleButton.Name = "removeModuleButton";
             this.removeModuleButton.Size = new System.Drawing.Size(164, 23);
             this.removeModuleButton.TabIndex = 6;
@@ -72,7 +72,7 @@
             // 
             // addModuleButton
             // 
-            this.addModuleButton.Location = new System.Drawing.Point(9, 179);
+            this.addModuleButton.Location = new System.Drawing.Point(6, 83);
             this.addModuleButton.Name = "addModuleButton";
             this.addModuleButton.Size = new System.Drawing.Size(164, 23);
             this.addModuleButton.TabIndex = 5;
@@ -105,7 +105,7 @@
             this.editDatabaseGroupBoxUI.Controls.Add(this.textBoxMonday);
             this.editDatabaseGroupBoxUI.Location = new System.Drawing.Point(12, 12);
             this.editDatabaseGroupBoxUI.Name = "editDatabaseGroupBoxUI";
-            this.editDatabaseGroupBoxUI.Size = new System.Drawing.Size(258, 237);
+            this.editDatabaseGroupBoxUI.Size = new System.Drawing.Size(593, 237);
             this.editDatabaseGroupBoxUI.TabIndex = 2;
             this.editDatabaseGroupBoxUI.TabStop = false;
             this.editDatabaseGroupBoxUI.Text = "Edit Database";
@@ -113,7 +113,7 @@
             // labelFriday
             // 
             this.labelFriday.AutoSize = true;
-            this.labelFriday.Location = new System.Drawing.Point(31, 172);
+            this.labelFriday.Location = new System.Drawing.Point(21, 136);
             this.labelFriday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFriday.Name = "labelFriday";
             this.labelFriday.Size = new System.Drawing.Size(38, 13);
@@ -122,7 +122,7 @@
             // 
             // textBoxFriday
             // 
-            this.textBoxFriday.Location = new System.Drawing.Point(73, 169);
+            this.textBoxFriday.Location = new System.Drawing.Point(73, 136);
             this.textBoxFriday.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFriday.Name = "textBoxFriday";
             this.textBoxFriday.ReadOnly = true;
@@ -132,17 +132,16 @@
             // labelThursday
             // 
             this.labelThursday.AutoSize = true;
-            this.labelThursday.Location = new System.Drawing.Point(15, 152);
+            this.labelThursday.Location = new System.Drawing.Point(267, 105);
             this.labelThursday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelThursday.Name = "labelThursday";
             this.labelThursday.Size = new System.Drawing.Size(54, 13);
             this.labelThursday.TabIndex = 43;
             this.labelThursday.Text = "Thursday:";
-            this.labelThursday.Click += new System.EventHandler(this.LabelThursday_Click);
             // 
             // textBoxThursday
             // 
-            this.textBoxThursday.Location = new System.Drawing.Point(73, 145);
+            this.textBoxThursday.Location = new System.Drawing.Point(325, 105);
             this.textBoxThursday.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxThursday.Name = "textBoxThursday";
             this.textBoxThursday.ReadOnly = true;
@@ -152,7 +151,7 @@
             // labelWednesday
             // 
             this.labelWednesday.AutoSize = true;
-            this.labelWednesday.Location = new System.Drawing.Point(2, 128);
+            this.labelWednesday.Location = new System.Drawing.Point(254, 73);
             this.labelWednesday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelWednesday.Name = "labelWednesday";
             this.labelWednesday.Size = new System.Drawing.Size(67, 13);
@@ -161,7 +160,7 @@
             // 
             // textBoxWednesday
             // 
-            this.textBoxWednesday.Location = new System.Drawing.Point(73, 121);
+            this.textBoxWednesday.Location = new System.Drawing.Point(325, 73);
             this.textBoxWednesday.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxWednesday.Name = "textBoxWednesday";
             this.textBoxWednesday.ReadOnly = true;
@@ -190,7 +189,7 @@
             // labelTuesday
             // 
             this.labelTuesday.AutoSize = true;
-            this.labelTuesday.Location = new System.Drawing.Point(18, 104);
+            this.labelTuesday.Location = new System.Drawing.Point(8, 104);
             this.labelTuesday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelTuesday.Name = "labelTuesday";
             this.labelTuesday.Size = new System.Drawing.Size(51, 13);
@@ -200,7 +199,7 @@
             // labelMonday
             // 
             this.labelMonday.AutoSize = true;
-            this.labelMonday.Location = new System.Drawing.Point(21, 80);
+            this.labelMonday.Location = new System.Drawing.Point(11, 73);
             this.labelMonday.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelMonday.Name = "labelMonday";
             this.labelMonday.Size = new System.Drawing.Size(48, 13);
@@ -209,7 +208,7 @@
             // 
             // textBoxTuesday
             // 
-            this.textBoxTuesday.Location = new System.Drawing.Point(73, 97);
+            this.textBoxTuesday.Location = new System.Drawing.Point(73, 104);
             this.textBoxTuesday.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxTuesday.Name = "textBoxTuesday";
             this.textBoxTuesday.ReadOnly = true;
@@ -229,7 +228,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 255);
+            this.ClientSize = new System.Drawing.Size(800, 255);
             this.Controls.Add(this.userGroupBoxUI);
             this.Controls.Add(this.editDatabaseGroupBoxUI);
             this.Name = "EditDatabaseForm";
