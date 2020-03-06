@@ -209,10 +209,11 @@ namespace Interactive_Timetable_Map
                 timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
                 timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
                 timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
+                timetableDataGrid.AllowUserToAddRows = false;
             }
             else
             {
-                for (int i = 0; i < 10; i++) { timetableDataGrid.Rows.Add(); }
+                for (int i = 0; i < 11; i++) { timetableDataGrid.Rows.Add(); }
 
                 //Displays time for each cell
                 timetableDataGrid.Rows[0].HeaderCell.Value = "09:00";
@@ -226,6 +227,7 @@ namespace Interactive_Timetable_Map
                 timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
                 timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
                 timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
+                timetableDataGrid.AllowUserToAddRows = false;
             }
         }
 

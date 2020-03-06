@@ -110,3 +110,16 @@ E:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable
 E:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.EditDatabaseForm.resources
 E:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.EditUsersForm.resources
 E:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map-master\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.HelpForm.resources
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe.config
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.pdb
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csprojAssemblyReference.cache
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.EditDatabaseForm.resources
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.EditUsersForm.resources
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.HelpForm.resources
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.loginForm.resources
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.MainForm.resources
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.Properties.Resources.resources
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.GenerateResource.cache
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
+C:\Users\genti\Desktop\2\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
