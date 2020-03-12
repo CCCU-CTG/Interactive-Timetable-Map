@@ -22,5 +22,10 @@ namespace Interactive_Timetable_Map
             Application.OpenForms.OfType<MainForm>().First().Show();
             this.Close();
         }
+
+        private void LabelThursday_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
