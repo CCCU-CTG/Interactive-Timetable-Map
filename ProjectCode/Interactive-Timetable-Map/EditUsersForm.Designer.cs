@@ -54,7 +54,7 @@
             this.userGroupBoxUI.Controls.Add(this.backButton);
             this.userGroupBoxUI.Controls.Add(this.addUserButton);
             this.userGroupBoxUI.Controls.Add(this.removeUserButton);
-            this.userGroupBoxUI.Location = new System.Drawing.Point(611, 12);
+            this.userGroupBoxUI.Location = new System.Drawing.Point(281, 12);
             this.userGroupBoxUI.Name = "userGroupBoxUI";
             this.userGroupBoxUI.Size = new System.Drawing.Size(177, 184);
             this.userGroupBoxUI.TabIndex = 3;
@@ -63,7 +63,7 @@
             // 
             // changePasswordButton
             // 
-            this.changePasswordButton.Location = new System.Drawing.Point(6, 133);
+            this.changePasswordButton.Location = new System.Drawing.Point(5, 150);
             this.changePasswordButton.Margin = new System.Windows.Forms.Padding(2);
             this.changePasswordButton.Name = "changePasswordButton";
             this.changePasswordButton.Size = new System.Drawing.Size(164, 26);
@@ -83,7 +83,7 @@
             // 
             // addUserButton
             // 
-            this.addUserButton.Location = new System.Drawing.Point(6, 73);
+            this.addUserButton.Location = new System.Drawing.Point(5, 90);
             this.addUserButton.Margin = new System.Windows.Forms.Padding(2);
             this.addUserButton.Name = "addUserButton";
             this.addUserButton.Size = new System.Drawing.Size(164, 26);
@@ -93,7 +93,7 @@
             // 
             // removeUserButton
             // 
-            this.removeUserButton.Location = new System.Drawing.Point(6, 103);
+            this.removeUserButton.Location = new System.Drawing.Point(5, 120);
             this.removeUserButton.Margin = new System.Windows.Forms.Padding(2);
             this.removeUserButton.Name = "removeUserButton";
             this.removeUserButton.Size = new System.Drawing.Size(164, 26);
@@ -115,14 +115,14 @@
             this.editUsersGroupBoxUI.Controls.Add(this.labelID);
             this.editUsersGroupBoxUI.Location = new System.Drawing.Point(12, 12);
             this.editUsersGroupBoxUI.Name = "editUsersGroupBoxUI";
-            this.editUsersGroupBoxUI.Size = new System.Drawing.Size(593, 184);
+            this.editUsersGroupBoxUI.Size = new System.Drawing.Size(263, 184);
             this.editUsersGroupBoxUI.TabIndex = 2;
             this.editUsersGroupBoxUI.TabStop = false;
             this.editUsersGroupBoxUI.Text = "Edit Users";
             // 
             // textBoxGroup
             // 
-            this.textBoxGroup.Location = new System.Drawing.Point(349, 107);
+            this.textBoxGroup.Location = new System.Drawing.Point(73, 139);
             this.textBoxGroup.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxGroup.Name = "textBoxGroup";
             this.textBoxGroup.ReadOnly = true;
@@ -132,7 +132,7 @@
             // labelGroup
             // 
             this.labelGroup.AutoSize = true;
-            this.labelGroup.Location = new System.Drawing.Point(300, 107);
+            this.labelGroup.Location = new System.Drawing.Point(24, 139);
             this.labelGroup.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelGroup.Name = "labelGroup";
             this.labelGroup.Size = new System.Drawing.Size(39, 13);
@@ -141,7 +141,7 @@
             // 
             // textBoxUsername
             // 
-            this.textBoxUsername.Location = new System.Drawing.Point(349, 73);
+            this.textBoxUsername.Location = new System.Drawing.Point(73, 114);
             this.textBoxUsername.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.ReadOnly = true;
@@ -151,7 +151,7 @@
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
-            this.labelUsername.Location = new System.Drawing.Point(281, 73);
+            this.labelUsername.Location = new System.Drawing.Point(5, 114);
             this.labelUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(58, 13);
@@ -160,7 +160,7 @@
             // 
             // textBoxLastName
             // 
-            this.textBoxLastName.Location = new System.Drawing.Point(73, 107);
+            this.textBoxLastName.Location = new System.Drawing.Point(73, 90);
             this.textBoxLastName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.ReadOnly = true;
@@ -169,7 +169,7 @@
             // 
             // textBoxFirstName
             // 
-            this.textBoxFirstName.Location = new System.Drawing.Point(73, 73);
+            this.textBoxFirstName.Location = new System.Drawing.Point(73, 66);
             this.textBoxFirstName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.ReadOnly = true;
@@ -179,7 +179,7 @@
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
-            this.labelFirstName.Location = new System.Drawing.Point(5, 73);
+            this.labelFirstName.Location = new System.Drawing.Point(5, 66);
             this.labelFirstName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(60, 13);
@@ -189,7 +189,7 @@
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
-            this.labelLastName.Location = new System.Drawing.Point(5, 107);
+            this.labelLastName.Location = new System.Drawing.Point(5, 90);
             this.labelLastName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelLastName.Name = "labelLastName";
             this.labelLastName.Size = new System.Drawing.Size(61, 13);
@@ -219,7 +219,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 207);
+            this.ClientSize = new System.Drawing.Size(469, 207);
             this.Controls.Add(this.userGroupBoxUI);
             this.Controls.Add(this.editUsersGroupBoxUI);
             this.Name = "EditUsersForm";
