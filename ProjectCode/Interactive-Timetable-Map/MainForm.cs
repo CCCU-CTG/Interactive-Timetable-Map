@@ -163,11 +163,12 @@ namespace Interactive_Timetable_Map
         /// For testing purposes, tells you if you are logged in or not
         public void LoginCheck(bool loggedInTemp, bool adminLoggedInTemp, User currentUserTemp)
         {
-            if (loggedInTemp) { loggedIn = true; loginButton.Enabled = false; logoutButton.Enabled = true; }
-            if (loggedIn) { testingLoggedInTextBox.Text = "Debug: You Are Logged In."; }
-            else { testingLoggedInTextBox.Text = "Debug: You Are Not Logged In."; logoutButton.Enabled = false; }
+            loggedIn = loggedInTemp;
+            adminLoggedIn = adminLoggedInTemp;
 
-            if (adminLoggedInTemp) { adminLoggedIn = true; }
+            if (loggedIn) {loginButton.Enabled = false; logoutButton.Enabled = true; testingLoggedInTextBox.Text = "Debug: You Are Logged In."; }
+            else { loginButton.Enabled = true; logoutButton.Enabled = false; testingLoggedInTextBox.Text = "Debug: You Are Not Logged In."; }
+
             if (adminLoggedIn) { testingLoggedInTextBox.Text = "Debug: You Are Logged In As Admin."; }
 
             currentUser = currentUserTemp;
@@ -180,6 +181,7 @@ namespace Interactive_Timetable_Map
 
             if (loggedIn)
             {
+                timetableDataGrid.AllowUserToAddRows = true;
                 for (int i = 0; i < moduleTimetableList.Count; i++)
                 {
                     if (currentUser.GetModule == moduleTimetableList[i].GetModuleName) { selectedModule = i; }
@@ -209,10 +211,13 @@ namespace Interactive_Timetable_Map
                 timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
                 timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
                 timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
+                timetableDataGrid.AllowUserToAddRows = false;
             }
             else
             {
-                for (int i = 0; i < 10; i++) { timetableDataGrid.Rows.Add(); }
+                timetableDataGrid.AllowUserToAddRows = true;
+                timetableDataGrid.Rows.Clear();
+                for (int i = 0; i < 11; i++) { timetableDataGrid.Rows.Add(); }
 
                 //Displays time for each cell
                 timetableDataGrid.Rows[0].HeaderCell.Value = "09:00";
@@ -226,6 +231,7 @@ namespace Interactive_Timetable_Map
                 timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
                 timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
                 timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
+                timetableDataGrid.AllowUserToAddRows = false;
             }
         }
 
@@ -252,6 +258,14 @@ namespace Interactive_Timetable_Map
         {
             var HelpForm = new HelpForm();
             HelpForm.Show();
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            loggedIn = false;
+            adminLoggedIn = false;
+            currentUser = null;
+            LoginCheck(loggedIn, adminLoggedIn, currentUser);
         }
     }
 }

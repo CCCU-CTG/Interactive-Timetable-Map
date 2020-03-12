@@ -33,5 +33,6 @@ namespace Interactive_Timetable_Map
         public string GetUsername { get { return userName; } }
         public string GetPassword { get { return password; } }
         public string GetModule { get { return module; } }
+        public bool GetAdmin { get { return admin; } }
     }    
 }
