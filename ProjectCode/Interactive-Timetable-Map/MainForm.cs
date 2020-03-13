@@ -151,6 +151,14 @@ namespace Interactive_Timetable_Map
             }
         }
 
+        public virtual void changeUserList()
+        {
+            // called when user details are changed
+            // clear the list and re read the details
+            usersList.Clear();
+            UserXMLReader();
+        }
+
         /// Opens Login Form
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -166,10 +174,11 @@ namespace Interactive_Timetable_Map
             loggedIn = loggedInTemp;
             adminLoggedIn = adminLoggedInTemp;
 
-            if (loggedIn) {loginButton.Enabled = false; logoutButton.Enabled = true; testingLoggedInTextBox.Text = "Debug: You Are Logged In."; }
-            else { loginButton.Enabled = true; logoutButton.Enabled = false; testingLoggedInTextBox.Text = "Debug: You Are Not Logged In."; }
+            if (loggedIn) {loginButton.Enabled = false; logoutButton.Enabled = true; testingLoggedInTextBox.Text = "User Logged In"; }
+            else { loginButton.Enabled = true; logoutButton.Enabled = false; testingLoggedInTextBox.Text = "User Logged Out"; }
 
-            if (adminLoggedIn) { testingLoggedInTextBox.Text = "Debug: You Are Logged In As Admin."; }
+            if (adminLoggedIn) { testingLoggedInTextBox.Text = "Admin Logged In"; editDatabaseButton.Enabled = true; editUsersButton.Enabled = true; }
+            else { editDatabaseButton.Enabled = false; editUsersButton.Enabled = false; }
 
             currentUser = currentUserTemp;
             TimetableDataGridLoad();
@@ -242,17 +251,20 @@ namespace Interactive_Timetable_Map
             DataForm.ShowDialog();
         }
 
+        // reload the timetable from the file
+        void DataForm_FormClosed(object sender, FormClosedEventArgs e) { ModuleTimetableXMLReader(); TimetableDataGridLoad(); }
+
         private void EditUsersButton_Click(object sender, EventArgs e)
         {
-            EditUsersForm UserForm = new EditUsersForm();
+            // open users form and use a callback when closed to update the users list
+            EditUsersForm UserForm = new EditUsersForm(usersList, this);
             this.Hide();
+            UserForm.FormClosed += new FormClosedEventHandler(UserForm_FormClosed);
             UserForm.ShowDialog();
         }
 
-        private void timetableDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        // reload the users from the file
+        void UserForm_FormClosed(object sender, FormClosedEventArgs e) { changeUserList(); }
 
         private void helpButton_Click(object sender, EventArgs e)
         {
@@ -266,6 +278,16 @@ namespace Interactive_Timetable_Map
             adminLoggedIn = false;
             currentUser = null;
             LoginCheck(loggedIn, adminLoggedIn, currentUser);
+        }
+
+        private void MainForm_Enter(object sender, EventArgs e)
+        {
+            changeUserList();
+        }
+
+        private void MainForm_Enter(object sender, ControlEventArgs e)
+        {
+            changeUserList();
         }
     }
 }

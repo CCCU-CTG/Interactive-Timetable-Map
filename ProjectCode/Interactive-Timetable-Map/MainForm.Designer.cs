@@ -74,7 +74,6 @@
             this.timetableDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.timetableDataGrid.Size = new System.Drawing.Size(581, 401);
             this.timetableDataGrid.TabIndex = 3;
-            this.timetableDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.timetableDataGrid_CellContentClick);
             // 
             // Monday
             // 

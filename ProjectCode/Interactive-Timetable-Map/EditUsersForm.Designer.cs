@@ -70,6 +70,7 @@
             this.changePasswordButton.TabIndex = 13;
             this.changePasswordButton.Text = "Change Password";
             this.changePasswordButton.UseVisualStyleBackColor = true;
+            this.changePasswordButton.Click += new System.EventHandler(this.changePasswordButton_Click);
             // 
             // backButton
             // 
@@ -90,6 +91,7 @@
             this.addUserButton.TabIndex = 10;
             this.addUserButton.Text = "Add User";
             this.addUserButton.UseVisualStyleBackColor = true;
+            this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
             // 
             // removeUserButton
             // 
@@ -100,6 +102,7 @@
             this.removeUserButton.TabIndex = 11;
             this.removeUserButton.Text = "Remove User";
             this.removeUserButton.UseVisualStyleBackColor = true;
+            this.removeUserButton.Click += new System.EventHandler(this.removeUserButton_Click);
             // 
             // editUsersGroupBoxUI
             // 
@@ -204,6 +207,7 @@
             this.comboBoxID.Name = "comboBoxID";
             this.comboBoxID.Size = new System.Drawing.Size(121, 21);
             this.comboBoxID.TabIndex = 21;
+            this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
             // labelID
             // 
