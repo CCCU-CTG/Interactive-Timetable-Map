@@ -151,6 +151,14 @@ namespace Interactive_Timetable_Map
             }
         }
 
+        public virtual void changeUserList()
+        {
+            // called when user details are changed
+            // clear the list and re read the details
+            usersList.Clear();
+            UserXMLReader();
+        }
+
         /// Opens Login Form
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -163,12 +171,14 @@ namespace Interactive_Timetable_Map
         /// For testing purposes, tells you if you are logged in or not
         public void LoginCheck(bool loggedInTemp, bool adminLoggedInTemp, User currentUserTemp)
         {
-            if (loggedInTemp) { loggedIn = true; loginButton.Enabled = false; logoutButton.Enabled = true; }
-            if (loggedIn) { testingLoggedInTextBox.Text = "Debug: You Are Logged In."; }
-            else { testingLoggedInTextBox.Text = "Debug: You Are Not Logged In."; logoutButton.Enabled = false; }
+            loggedIn = loggedInTemp;
+            adminLoggedIn = adminLoggedInTemp;
 
-            if (adminLoggedInTemp) { adminLoggedIn = true; }
-            if (adminLoggedIn) { testingLoggedInTextBox.Text = "Debug: You Are Logged In As Admin."; }
+            if (loggedIn) {loginButton.Enabled = false; logoutButton.Enabled = true; testingLoggedInTextBox.Text = "User Logged In"; }
+            else { loginButton.Enabled = true; logoutButton.Enabled = false; testingLoggedInTextBox.Text = "User Logged Out"; }
+
+            if (adminLoggedIn) { testingLoggedInTextBox.Text = "Admin Logged In"; editDatabaseButton.Enabled = true; editUsersButton.Enabled = true; }
+            else { editDatabaseButton.Enabled = false; editUsersButton.Enabled = false; }
 
             currentUser = currentUserTemp;
             TimetableDataGridLoad();
@@ -180,6 +190,7 @@ namespace Interactive_Timetable_Map
 
             if (loggedIn)
             {
+                timetableDataGrid.AllowUserToAddRows = true;
                 for (int i = 0; i < moduleTimetableList.Count; i++)
                 {
                     if (currentUser.GetModule == moduleTimetableList[i].GetModuleName) { selectedModule = i; }
@@ -213,6 +224,8 @@ namespace Interactive_Timetable_Map
             }
             else
             {
+                timetableDataGrid.AllowUserToAddRows = true;
+                timetableDataGrid.Rows.Clear();
                 for (int i = 0; i < 11; i++) { timetableDataGrid.Rows.Add(); }
 
                 //Displays time for each cell
@@ -238,22 +251,43 @@ namespace Interactive_Timetable_Map
             DataForm.ShowDialog();
         }
 
+        // reload the timetable from the file
+        void DataForm_FormClosed(object sender, FormClosedEventArgs e) { ModuleTimetableXMLReader(); TimetableDataGridLoad(); }
+
         private void EditUsersButton_Click(object sender, EventArgs e)
         {
-            EditUsersForm UserForm = new EditUsersForm();
+            // open users form and use a callback when closed to update the users list
+            EditUsersForm UserForm = new EditUsersForm(usersList, this);
             this.Hide();
+            UserForm.FormClosed += new FormClosedEventHandler(UserForm_FormClosed);
             UserForm.ShowDialog();
         }
 
-        private void timetableDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        // reload the users from the file
+        void UserForm_FormClosed(object sender, FormClosedEventArgs e) { changeUserList(); }
 
         private void helpButton_Click(object sender, EventArgs e)
         {
             var HelpForm = new HelpForm();
             HelpForm.Show();
+        }
+
+        private void LogoutButton_Click(object sender, EventArgs e)
+        {
+            loggedIn = false;
+            adminLoggedIn = false;
+            currentUser = null;
+            LoginCheck(loggedIn, adminLoggedIn, currentUser);
+        }
+
+        private void MainForm_Enter(object sender, EventArgs e)
+        {
+            changeUserList();
+        }
+
+        private void MainForm_Enter(object sender, ControlEventArgs e)
+        {
+            changeUserList();
         }
     }
 }

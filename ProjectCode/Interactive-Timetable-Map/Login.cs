@@ -64,7 +64,7 @@ namespace Interactive_Timetable_Map
                     {
                         MessageBox.Show("Welcome " + dir + " to the private area!");
                         loggedInTemp = true;
-                        adminLoggedInTemp = true;
+                        if (currentUser.GetAdmin) { adminLoggedInTemp = true; }
                         // Returns loggedInTemp to LoginCheck in MainForm
                         Application.OpenForms.OfType<MainForm>().First().LoginCheck(loggedInTemp, adminLoggedInTemp, currentUser);
                         this.Close();
