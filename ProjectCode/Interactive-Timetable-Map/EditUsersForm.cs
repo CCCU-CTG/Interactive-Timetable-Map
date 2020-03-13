@@ -42,13 +42,14 @@ namespace Interactive_Timetable_Map
         public string newAdmin = null;
         public string newID = null;
         public bool sentUser = false;
+        User loginUser;
 
-        public EditUsersForm(List<User> usersList, MainForm parent)
+        public EditUsersForm(List<User> usersList, MainForm parent, User loggedInAs)
         {
             xtr.Load(directory + @"\User_Database.xml");
 
             MainForm parentForm = parent;
-
+            loginUser = loggedInAs;
             user = usersList;
             InitializeComponent();
             CreateUsers();
@@ -147,28 +148,31 @@ namespace Interactive_Timetable_Map
 
         private void removeUserButton_Click(object sender, EventArgs e)
         {
-            DialogResult removeUser = MessageBox.Show("Do you want to remove the currently selected user? this action cannot be undone.", "Remove User", MessageBoxButtons.YesNo);
-            if (removeUser == DialogResult.Yes)
+            if (currentUser.GetUsername == loginUser.GetUsername) { MessageBox.Show("You cannot remove yourself from the users list", "User Cannot Be Removed", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+            else
             {
-                string removeName = currentUser.GetUsername;
-                foreach (XmlNode userName in xtr.DocumentElement.SelectNodes("//Username"))
+                DialogResult removeUser = MessageBox.Show("Do you want to remove the currently selected user? this action cannot be undone.", "Remove User", MessageBoxButtons.YesNo);
+                if (removeUser == DialogResult.Yes)
                 {
-                    if (removeName == userName.FirstChild.Value)
+                    string removeName = currentUser.GetUsername;
+                    foreach (XmlNode userName in xtr.DocumentElement.SelectNodes("//Username"))
                     {
-                        XmlNode parent = userName.ParentNode;
-                        //userName.ParentNode.RemoveAll();
-                        parent.ParentNode.RemoveChild(parent);
+                        if (removeName == userName.FirstChild.Value)
+                        {
+                            XmlNode parent = userName.ParentNode;
+                            //userName.ParentNode.RemoveAll();
+                            parent.ParentNode.RemoveChild(parent);
 
-                        xtr.Save(directory + @"\User_Database.xml");
+                            xtr.Save(directory + @"\User_Database.xml");
+
+                        }
 
                     }
-
+                    MessageBox.Show("User: " + removeName + "succesfully removed", "User Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-                MessageBox.Show("User: " + removeName + "succesfully removed", "User Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (removeUser == DialogResult.No) { }
+
             }
-            else if (removeUser == DialogResult.No) { }
-
-
         }
 
         private void changePasswordButton_Click(object sender, EventArgs e)

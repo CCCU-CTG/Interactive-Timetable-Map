@@ -35,6 +35,7 @@ namespace Interactive_Timetable_Map
         public EditDatabaseForm()
         {
             InitializeComponent();
+
             xtr.Load(directory + @"\Module_Timetable_Database.xml");
 
             // load in all store loops of modules with corresponding dates
@@ -107,6 +108,93 @@ namespace Interactive_Timetable_Map
             }
         }
 
+        //refresh all drop downs to match new data added/removed
+        private void refreshDropDowns()
+        {
+            xtr.Load(directory + @"\Module_Timetable_Database.xml");
+
+            monday.Clear(); tuesday.Clear(); wednesday.Clear(); thursday.Clear(); friday.Clear(); moduleNameComboBox.Items.Clear();
+
+            // load in all store loops of modules with corresponding dates
+            // create all counter variables
+            int i = 0; int time = 9; int tc = 0; string dt;
+            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Monday"))
+            {
+                time = 9; tc = 0;
+                foreach (XmlNode slot in uID)
+                {
+                    dt = string.Format("{0:00.00}", time + tc);
+                    dt += ": ";
+                    monday.Insert(i, dt + slot.InnerText); i++; tc++;
+                }
+            }
+
+            i = 0; tc = 0;
+            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Tuesday"))
+            {
+                time = 9; tc = 0;
+                foreach (XmlNode slot in uID)
+                {
+                    dt = string.Format("{0:00.00}", time + tc);
+                    dt += ": ";
+                    tuesday.Insert(i, dt + slot.InnerText); i++; tc++;
+                }
+            }
+
+            i = 0; tc = 0;
+            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Wednesday"))
+            {
+                time = 9; tc = 0;
+                foreach (XmlNode slot in uID)
+                {
+                    dt = string.Format("{0:00.00}", time + tc);
+                    dt += ": ";
+                    wednesday.Insert(i, dt + slot.InnerText); i++; tc++;
+                }
+            }
+
+            i = 0; tc = 0;
+            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Thursday"))
+            {
+                time = 9; tc = 0;
+                foreach (XmlNode slot in uID)
+                {
+                    dt = string.Format("{0:00.00}", time + tc);
+                    dt += ": ";
+                    thursday.Insert(i, dt + slot.InnerText); i++; tc++;
+                }
+            }
+
+            i = 0; tc = 0;
+            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Friday"))
+            {
+                time = 9; tc = 0;
+                foreach (XmlNode slot in uID)
+                {
+                    dt = string.Format("{0:00.00}", time + tc);
+                    dt += ": ";
+                    friday.Insert(i, dt + slot.InnerText); i++; tc++;
+                }
+            }
+
+            i = 0;
+            moduleNameComboBox.Items.Clear();
+            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Name"))
+            {
+                moduleNameComboBox.Items.Insert(i, uID.InnerText);
+                i++;
+            }
+
+            comboBoxMon.Items.Clear();
+            comboBoxTues.Items.Clear();
+            comboBoxWeds.Items.Clear();
+            comboBoxThurs.Items.Clear();
+            comboBoxFri.Items.Clear();
+
+            // add data to boxes
+            selectedModule = "";
+        }
+
         private void BackButton_Click(object sender, EventArgs e)
         {
             Application.OpenForms.OfType<MainForm>().First().Show();
@@ -115,7 +203,57 @@ namespace Interactive_Timetable_Map
 
         private void addModuleButton_Click(object sender, EventArgs e)
         {
+            bool valid = true;
+            string newModuleName = Interaction.InputBox("Enter the name of the new module: ", "New Module Name", "New Module Name");
+            // if module allready exists dont create and show warning message
+            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Name"))
+            {
+                if (uID.InnerText == newModuleName) { valid = false; }
+            }
+            if (!valid) { MessageBox.Show("Module " + newModuleName + "Already exists", "Module Allready Exists", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+            else
+            {
+                //create module and set it blank
+                XmlNode headerNode = xtr.DocumentElement.SelectSingleNode("//Modules");
 
+                XmlNode parentNode = xtr.CreateElement(newModuleName);
+                headerNode.AppendChild(parentNode);
+
+                XmlNode nameNode = xtr.CreateElement("Name");
+                nameNode.InnerText = newModuleName;
+                parentNode.AppendChild(nameNode);
+
+                // set all dates and times to None
+                XmlNode DateNode = xtr.CreateElement("Monday");
+                parentNode.AppendChild(DateNode);
+                // create all time slots and attatch to corresponding date
+                for (int i = 0; i < 11; i++)
+                {
+                    XmlNode timeNode = xtr.CreateElement("Time");
+                    timeNode.InnerText = "None";
+                    DateNode.AppendChild(timeNode);
+                }
+                // repeat for tues-fri
+                DateNode = xtr.CreateElement("Tuesday");
+                parentNode.AppendChild(DateNode);
+                for (int i = 0; i < 11; i++) { XmlNode timeNode = xtr.CreateElement("Time"); timeNode.InnerText = "None"; DateNode.AppendChild(timeNode); }
+
+                DateNode = xtr.CreateElement("Wednesday");
+                parentNode.AppendChild(DateNode);
+                for (int i = 0; i < 11; i++) { XmlNode timeNode = xtr.CreateElement("Time"); timeNode.InnerText = "None"; DateNode.AppendChild(timeNode); }
+
+                DateNode = xtr.CreateElement("Thursday");
+                parentNode.AppendChild(DateNode);
+                for (int i = 0; i < 11; i++) { XmlNode timeNode = xtr.CreateElement("Time"); timeNode.InnerText = "None"; DateNode.AppendChild(timeNode); }
+
+                DateNode = xtr.CreateElement("Friday");
+                parentNode.AppendChild(DateNode);
+                for (int i = 0; i < 11; i++) { XmlNode timeNode = xtr.CreateElement("Time"); timeNode.InnerText = "None"; DateNode.AppendChild(timeNode); }
+
+                xtr.Save(directory + @"\Module_Timetable_Database.xml");
+                MessageBox.Show("Module: " + newModuleName + "succesfully added", "Module Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                refreshDropDowns();
+            }
         }
 
         private void moduleNameComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -230,6 +368,33 @@ namespace Interactive_Timetable_Map
             selectedTimeSlot = monday[(groupIndex + comboBoxFri.SelectedIndex)];
             textBoxTimeSlot.Text = "Friday:\n " + selectedTimeSlot;
             timeSlotDate = "Friday";
+        }
+
+        private void removeModuleButton_Click(object sender, EventArgs e)
+        {
+            string moduleToDelete = Interaction.InputBox("Enter the name of the module to remove, note any users in this module will need to be manually changed to other modules ", "Remove Module", "Remove Module");
+
+            DialogResult removeModule = MessageBox.Show("Do you want to remove the currently selected module? this action cannot be undone.", "Remove User", MessageBoxButtons.YesNo);
+            if (removeModule == DialogResult.Yes)
+            {
+                foreach (XmlNode module in xtr.DocumentElement.SelectNodes("//Modules/*"))
+                {
+                    if (moduleToDelete == module.FirstChild.InnerText)
+                    {
+                        XmlNode parent = module.ParentNode;
+                        //userName.ParentNode.RemoveAll();
+                        parent.RemoveChild(module);
+
+                        xtr.Save(directory + @"\Module_Timetable_Database.xml");
+
+                    }
+
+                }
+                MessageBox.Show("User: " + moduleToDelete + "succesfully removed", "User Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (removeModule == DialogResult.No) { }
+            refreshDropDowns();
+
         }
     }
 }

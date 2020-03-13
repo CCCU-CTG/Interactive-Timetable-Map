@@ -104,6 +104,7 @@
             this.removeModuleButton.TabIndex = 6;
             this.removeModuleButton.Text = "Remove Module";
             this.removeModuleButton.UseVisualStyleBackColor = true;
+            this.removeModuleButton.Click += new System.EventHandler(this.removeModuleButton_Click);
             // 
             // addModuleButton
             // 
@@ -113,6 +114,7 @@
             this.addModuleButton.TabIndex = 5;
             this.addModuleButton.Text = "Add Module";
             this.addModuleButton.UseVisualStyleBackColor = true;
+            this.addModuleButton.Click += new System.EventHandler(this.addModuleButton_Click);
             // 
             // backButton
             // 
