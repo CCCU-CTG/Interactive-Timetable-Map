@@ -246,8 +246,10 @@ namespace Interactive_Timetable_Map
 
         private void EditDatabaseButton_Click(object sender, EventArgs e)
         {
+            // open database form and use a callback to update the timetable
             EditDatabaseForm DataForm = new EditDatabaseForm();
             this.Hide();
+            DataForm.FormClosed += new FormClosedEventHandler(DataForm_FormClosed);
             DataForm.ShowDialog();
         }
 
@@ -257,7 +259,7 @@ namespace Interactive_Timetable_Map
         private void EditUsersButton_Click(object sender, EventArgs e)
         {
             // open users form and use a callback when closed to update the users list
-            EditUsersForm UserForm = new EditUsersForm(usersList, this);
+            EditUsersForm UserForm = new EditUsersForm(usersList, this, currentUser);
             this.Hide();
             UserForm.FormClosed += new FormClosedEventHandler(UserForm_FormClosed);
             UserForm.ShowDialog();
