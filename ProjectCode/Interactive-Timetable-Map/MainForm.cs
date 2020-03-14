@@ -264,7 +264,6 @@ namespace Interactive_Timetable_Map
         {
             // called when user details are changed
             // clear the list and re read the details
-            MessageBox.Show("Test");
             usersList.Clear();
             UserXMLReader();
         }
