@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -151,14 +152,6 @@ namespace Interactive_Timetable_Map
             }
         }
 
-        public virtual void changeUserList()
-        {
-            // called when user details are changed
-            // clear the list and re read the details
-            usersList.Clear();
-            UserXMLReader();
-        }
-
         /// Opens Login Form
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -186,11 +179,12 @@ namespace Interactive_Timetable_Map
 
         private void TimetableDataGridLoad()
         {
+            timetableDataGrid.AllowUserToAddRows = false;
             int selectedModule = 0;
+            string[] timetableTimes = new string[] { "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"};
 
             if (loggedIn)
             {
-                timetableDataGrid.AllowUserToAddRows = true;
                 for (int i = 0; i < moduleTimetableList.Count; i++)
                 {
                     if (currentUser.GetModule == moduleTimetableList[i].GetModuleName) { selectedModule = i; }
@@ -199,7 +193,7 @@ namespace Interactive_Timetable_Map
                 //Resets table
                 timetableDataGrid.Rows.Clear();
                 //Creates 11 empty rows
-                for (int i = 0; i < 11; i++)
+                for (int i = 0; i < timetableTimes.Length; i++)
                 {
                     timetableDataGrid.Rows.Add
                         (moduleTimetableList[selectedModule].GetMonday[i],
@@ -207,69 +201,127 @@ namespace Interactive_Timetable_Map
                         moduleTimetableList[selectedModule].GetWednesday[i],
                         moduleTimetableList[selectedModule].GetThursday[i],
                         moduleTimetableList[selectedModule].GetFriday[i]);
+                    timetableDataGrid.Rows[i].HeaderCell.Value = timetableTimes[i];
                 }
 
-                timetableDataGrid.Rows[0].HeaderCell.Value = "09:00";
-                timetableDataGrid.Rows[1].HeaderCell.Value = "10:00";
-                timetableDataGrid.Rows[2].HeaderCell.Value = "11:00";
-                timetableDataGrid.Rows[3].HeaderCell.Value = "12:00";
-                timetableDataGrid.Rows[4].HeaderCell.Value = "13:00";
-                timetableDataGrid.Rows[5].HeaderCell.Value = "14:00";
-                timetableDataGrid.Rows[6].HeaderCell.Value = "15:00";
-                timetableDataGrid.Rows[7].HeaderCell.Value = "16:00";
-                timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
-                timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
-                timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
-                timetableDataGrid.AllowUserToAddRows = false;
+                foreach (DataGridViewRow r in timetableDataGrid.Rows)
+                {
+                    DataGridViewLinkCell Monday = new DataGridViewLinkCell();
+                    if(r.Cells[0].Value.ToString() != "None")
+                    {
+                        Monday.Value = r.Cells[0].Value;
+                        timetableDataGrid[0, r.Index] = Monday;
+                    }
+
+                    DataGridViewLinkCell Tuesday = new DataGridViewLinkCell();
+                    if (r.Cells[1].Value.ToString() != "None")
+                    {
+                        Tuesday.Value = r.Cells[1].Value;
+                        timetableDataGrid[1, r.Index] = Tuesday;
+                    }
+
+                    DataGridViewLinkCell Wednesday = new DataGridViewLinkCell();
+                    if (r.Cells[2].Value.ToString() != "None")
+                    {
+                        Wednesday.Value = r.Cells[2].Value;
+                        timetableDataGrid[2, r.Index] = Wednesday;
+                    }
+
+                    DataGridViewLinkCell Thursday = new DataGridViewLinkCell();
+                    if (r.Cells[3].Value.ToString() != "None")
+                    {
+                        Thursday.Value = r.Cells[3].Value;
+                        timetableDataGrid[3, r.Index] = Thursday;
+                    }
+
+                    DataGridViewLinkCell Friday = new DataGridViewLinkCell();
+                    if (r.Cells[4].Value.ToString() != "None")
+                    {
+                        Friday.Value = r.Cells[4].Value;
+                        timetableDataGrid[4, r.Index] = Friday;
+                    }
+                }
             }
             else
             {
-                timetableDataGrid.AllowUserToAddRows = true;
                 timetableDataGrid.Rows.Clear();
-                for (int i = 0; i < 11; i++) { timetableDataGrid.Rows.Add(); }
-
+                for (int i = 0; i < timetableTimes.Length; i++) { timetableDataGrid.Rows.Add(); timetableDataGrid.Rows[i].HeaderCell.Value = timetableTimes[i]; }
                 //Displays time for each cell
-                timetableDataGrid.Rows[0].HeaderCell.Value = "09:00";
-                timetableDataGrid.Rows[1].HeaderCell.Value = "10:00";
-                timetableDataGrid.Rows[2].HeaderCell.Value = "11:00";
-                timetableDataGrid.Rows[3].HeaderCell.Value = "12:00";
-                timetableDataGrid.Rows[4].HeaderCell.Value = "13:00";
-                timetableDataGrid.Rows[5].HeaderCell.Value = "14:00";
-                timetableDataGrid.Rows[6].HeaderCell.Value = "15:00";
-                timetableDataGrid.Rows[7].HeaderCell.Value = "16:00";
-                timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
-                timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
-                timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
-                timetableDataGrid.AllowUserToAddRows = false;
+            }
+        }
+
+        private void timetableDataGrid_CellMouseClick(object sender, DataGridViewCellEventArgs e)
+        {
+            switch (timetableDataGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString())
+            {
+                case "Lf13":
+                    Process.Start("https://www.canterbury.ac.uk/campusmaps/#/2ea30af3d92c45ee851a1e01/details/fa0c4599c02c468f90b2613a/");
+                break;
+                case "Ng07":
+                    Process.Start("https://www.canterbury.ac.uk/campusmaps/#/2ea30af3d92c45ee851a1e01/details/3f97499b02244a6b8320852e/");
+                break;
+                case "If02":
+                    Process.Start("https://www.canterbury.ac.uk/campusmaps/#/2ea30af3d92c45ee851a1e01/details/0e32e2d035c84cfd8f3ce7c7/");
+                break;
+                case "Ng03":
+                    Process.Start("https://www.canterbury.ac.uk/campusmaps/#/2ea30af3d92c45ee851a1e01/details/0b8dbbf97e4e44b3af2780ee/");
+                break;
+                case "Ig02":
+                    Process.Start("https://www.canterbury.ac.uk/campusmaps/#/2ea30af3d92c45ee851a1e01/details/2ae42057860e4f719e06dc9a/");
+               break;
+                case "OS.0.03":
+                    Process.Start("https://www.canterbury.ac.uk/campusmaps/#/2ea30af3d92c45ee851a1e01/details/89418a349156467b941e428e/");
+                break;
+                case "Pg06":
+                    Process.Start("https://www.canterbury.ac.uk/campusmaps/#/2ea30af3d92c45ee851a1e01/details/1a6730c77c8548f78b3f389c/");
+                break;
+                case "Lg27":
+                    Process.Start("https://www.canterbury.ac.uk/campusmaps/#/2ea30af3d92c45ee851a1e01/details/18587695b38a4d8380e2ccd9/");
+                break;
+                case "If03":
+                    Process.Start("https://www.canterbury.ac.uk/campusmaps/#/2ea30af3d92c45ee851a1e01/details/86973e61c0d34a85b732371f/");
+                break;
+                case "Lunchtime":
+                    Process.Start("https://www.canterbury.ac.uk/campusmaps/#/2ea30af3d92c45ee851a1e01/details/c06b8595bcbd43bba93b340d/");
+                break;
             }
         }
 
         private void EditDatabaseButton_Click(object sender, EventArgs e)
         {
-            // open database form and use a callback to update the timetable
-            EditDatabaseForm DataForm = new EditDatabaseForm();
-            this.Hide();
-            DataForm.FormClosed += new FormClosedEventHandler(DataForm_FormClosed);
+            if (Application.OpenForms.OfType<EditDatabaseForm>().Count() > 0) { Application.OpenForms.OfType<EditDatabaseForm>().First().Close(); }
+            var DataForm = new EditDatabaseForm();
             DataForm.ShowDialog();
         }
 
         // reload the timetable from the file
-        void DataForm_FormClosed(object sender, FormClosedEventArgs e) { ModuleTimetableXMLReader(); TimetableDataGridLoad(); }
+        public void UpdateDataForm()
+        {
+            moduleTimetableList.Clear();
+            ModuleTimetableXMLReader();
+            TimetableDataGridLoad();
+        }
 
         private void EditUsersButton_Click(object sender, EventArgs e)
         {
             // open users form and use a callback when closed to update the users list
-            EditUsersForm UserForm = new EditUsersForm(usersList, this, currentUser);
-            this.Hide();
-            UserForm.FormClosed += new FormClosedEventHandler(UserForm_FormClosed);
+            if (Application.OpenForms.OfType<EditUsersForm>().Count() > 0) { Application.OpenForms.OfType<EditUsersForm>().First().Close(); }
+            var UserForm = new EditUsersForm(usersList, this, currentUser);
             UserForm.ShowDialog();
         }
 
         // reload the users from the file
-        void UserForm_FormClosed(object sender, FormClosedEventArgs e) { changeUserList(); }
+        public void UpdateUserForm()
+        {
+            // called when user details are changed
+            // clear the list and re read the details
+            usersList.Clear();
+            UserXMLReader();
+        }
 
         private void helpButton_Click(object sender, EventArgs e)
         {
+            if (Application.OpenForms.OfType<HelpForm>().Count() > 0) { Application.OpenForms.OfType<HelpForm>().First().Close(); }
             var HelpForm = new HelpForm();
             HelpForm.Show();
         }
@@ -280,16 +332,6 @@ namespace Interactive_Timetable_Map
             adminLoggedIn = false;
             currentUser = null;
             LoginCheck(loggedIn, adminLoggedIn, currentUser);
-        }
-
-        private void MainForm_Enter(object sender, EventArgs e)
-        {
-            changeUserList();
-        }
-
-        private void MainForm_Enter(object sender, ControlEventArgs e)
-        {
-            changeUserList();
         }
     }
 }

@@ -17,14 +17,14 @@ namespace Interactive_Timetable_Map
 {
     public partial class AddUser : Form
     {
-        public string newUsername = null;
-        public string newPassword = null;
-        public string newFirstname = null;
-        public string newSurname = null;
-        public string newGroup = null;
-        public string newAdmin = null;
-        private EditUsersForm pForm = null;
-        private List<User> users = null;
+        string newUsername = null;
+        string newPassword = null;
+        string newFirstname = null;
+        string newSurname = null;
+        string newGroup = null;
+        string newAdmin = null;
+        private EditUsersForm pForm;
+        private List<User> users;
 
         XmlDocument xtr = new XmlDocument();
         string directory = Directory.GetCurrentDirectory() + "/Databases";
@@ -43,10 +43,6 @@ namespace Interactive_Timetable_Map
                 i++;
             }
 
-            //comboBoxGroup.Items.Insert(0, "Computer_Science_A");
-            //comboBoxGroup.Items.Insert(0, "Computer_Science_B");
-            //comboBoxGroup.Items.Insert(0, "Computing_A");
-            //comboBoxGroup.Items.Insert(0, "Computing_B");
             comboBoxGroup.SelectedIndex = 0;
             users = userList;
         }
@@ -61,24 +57,20 @@ namespace Interactive_Timetable_Map
             newGroup = comboBoxGroup.SelectedItem.ToString();
 
             bool validuser = true;
-            if (newGroup == null) validuser = false;
-            if (newFirstname == null) validuser = false;
-            if (newSurname == null) validuser = false;
-            if (newUsername.Length < 3) validuser = false;
-            if (newPassword.Length < 5) validuser = false;
+            if (String.IsNullOrWhiteSpace(newGroup) || String.IsNullOrWhiteSpace(newFirstname) || String.IsNullOrWhiteSpace(newSurname)) { validuser = false; }
+            if (newUsername.Length < 3 || String.IsNullOrWhiteSpace(newUsername) || newPassword.Length < 5 || String.IsNullOrWhiteSpace(newPassword)) { validuser = false; }
 
             int tempID = 0;
             foreach (User user in users)
             {
                 if (int.Parse(user.GetPatientID) > tempID)
+                {
                     tempID = int.Parse(user.GetPatientID);
+                }
                 if (newUsername == user.GetUsername)
                 {
                     validuser = false;
-                    MessageBox.Show("A user with this username already exists in our system, please choose a different username",
-                "Invalid entry",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
+                    MessageBox.Show("A user with this username already exists in our system, please choose a different username", "Invalid entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
 
@@ -93,18 +85,16 @@ namespace Interactive_Timetable_Map
                 pForm.newUsername = newUsername;
                 pForm.newPassword = newPassword;
                 pForm.newGroup = newGroup;
-                if (checkBoxAdmin.Checked) { pForm.newAdmin = "Y"; } else { pForm.newAdmin = "N"; }
+                if (checkBoxAdmin.Checked) { pForm.newAdmin = "Y"; }
+                else { pForm.newAdmin = "N"; }
+                Application.OpenForms.OfType<EditUsersForm>().First().AddUserFunction();
+                Application.OpenForms.OfType<EditUsersForm>().First().AddUsersUI();
                 this.Close();
-
             }
             else
             {
-
                 // display validity error message
-                MessageBox.Show("Invalid entry, ensure a group, the username is longer than 3 characters and the password is longer than 5 characters",
-                "Invalid entry",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Warning);
+                MessageBox.Show("Invalid entry, ensure a group, the username is longer than 3 characters and the password is longer than 5 characters", "Invalid entry", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
     }

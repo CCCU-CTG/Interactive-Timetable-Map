@@ -38,74 +38,7 @@ namespace Interactive_Timetable_Map
 
             xtr.Load(directory + @"\Module_Timetable_Database.xml");
 
-            // load in all store loops of modules with corresponding dates
-            // create all counter variables
-            int i = 0; int time = 9; int tc = 0; string dt;
-            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Monday"))
-            {
-                time = 9; tc = 0;
-                foreach (XmlNode slot in uID)
-                {
-                    dt = string.Format("{0:00.00}", time + tc);
-                    dt += ": ";
-                    monday.Insert(i, dt + slot.InnerText); i++; tc++;
-                }
-            }
-
-            i = 0; tc = 0;
-            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Tuesday"))
-            {
-                time = 9; tc = 0;
-                foreach (XmlNode slot in uID)
-                {
-                    dt = string.Format("{0:00.00}", time + tc);
-                    dt += ": ";
-                    tuesday.Insert(i, dt + slot.InnerText); i++; tc++;
-                }
-            }
-
-            i = 0; tc = 0;
-            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Wednesday"))
-            {
-                time = 9; tc = 0;
-                foreach (XmlNode slot in uID)
-                {
-                    dt = string.Format("{0:00.00}", time + tc);
-                    dt += ": ";
-                    wednesday.Insert(i, dt + slot.InnerText); i++; tc++;
-                }
-            }
-
-            i = 0; tc = 0;
-            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Thursday"))
-            {
-                time = 9; tc = 0;
-                foreach (XmlNode slot in uID)
-                {
-                    dt = string.Format("{0:00.00}", time + tc);
-                    dt += ": ";
-                    thursday.Insert(i, dt + slot.InnerText); i++; tc++;
-                }
-            }
-
-            i = 0; tc = 0;
-            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Friday"))
-            {
-                time = 9; tc = 0;
-                foreach (XmlNode slot in uID)
-                {
-                    dt = string.Format("{0:00.00}", time + tc);
-                    dt += ": ";
-                    friday.Insert(i, dt + slot.InnerText); i++; tc++;
-                }
-            }
-
-            i = 0;
-            foreach (XmlNode uID in xtr.DocumentElement.SelectNodes("//Name"))
-            {
-                moduleNameComboBox.Items.Insert(i, uID.InnerText);
-                i++;
-            }
+            refreshDropDowns();
         }
 
         //refresh all drop downs to match new data added/removed
@@ -114,6 +47,7 @@ namespace Interactive_Timetable_Map
             xtr.Load(directory + @"\Module_Timetable_Database.xml");
 
             monday.Clear(); tuesday.Clear(); wednesday.Clear(); thursday.Clear(); friday.Clear(); moduleNameComboBox.Items.Clear();
+            comboBoxMon.Text = ""; comboBoxTues.Text = ""; comboBoxWeds.Text = ""; comboBoxThurs.Text = ""; comboBoxFri.Text = "";
 
             // load in all store loops of modules with corresponding dates
             // create all counter variables
@@ -193,6 +127,7 @@ namespace Interactive_Timetable_Map
 
             // add data to boxes
             selectedModule = "";
+            selectedTimeSlot = "";
         }
 
         private void BackButton_Click(object sender, EventArgs e)
@@ -330,16 +265,18 @@ namespace Interactive_Timetable_Map
                 slot.InnerText = newTimeSlot;
                 xtr.Save(directory + @"\Module_Timetable_Database.xml");
                 MessageBox.Show("timeslot changed", "Timeslot Changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
 
+                Application.OpenForms.OfType<MainForm>().First().UpdateDataForm();
+                refreshDropDowns();
+            }
         }
+
         // when any combo box is selected change the drop down path variable and the date in the information box
         private void comboBoxMon_SelectedIndexChanged(object sender, EventArgs e)
         {
             selectedTimeSlot = monday[(groupIndex + comboBoxMon.SelectedIndex)];
             textBoxTimeSlot.Text = "Monday:\n " + selectedTimeSlot;
             timeSlotDate = "Monday";
-
         }
 
         private void comboBoxTues_SelectedIndexChanged(object sender, EventArgs e)
@@ -394,7 +331,6 @@ namespace Interactive_Timetable_Map
             }
             else if (removeModule == DialogResult.No) { }
             refreshDropDowns();
-
         }
     }
 }
