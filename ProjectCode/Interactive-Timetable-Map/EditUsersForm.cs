@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -53,8 +53,14 @@ namespace Interactive_Timetable_Map
             user = usersList;
             InitializeComponent();
             CreateUsers();
+            AddUsersUI();
+        }
+
+        public void AddUsersUI()
+        {
             int i = 0;
-            foreach (User user in usersList)
+            comboBoxID.Items.Clear();
+            foreach (User user in user)
             {
                 comboBoxID.Items.Insert(i, user.GetPatientID);
                 i++;
@@ -92,14 +98,12 @@ namespace Interactive_Timetable_Map
         {
             sentUser = false;
             // create new user form and add call back function to it
+            if (Application.OpenForms.OfType<AddUser>().Count() > 0) { Application.OpenForms.OfType<AddUser>().First().Close(); }
             var adduserForm = new AddUser(this, user);
-            adduserForm.FormClosing += new FormClosingEventHandler(adduserForm_FormClosing);
             adduserForm.ShowDialog();
-
         }
 
-
-        void adduserForm_FormClosing(object sender, FormClosingEventArgs e)
+        public void AddUserFunction()
         {
             if (sentUser)
             {
@@ -139,61 +143,78 @@ namespace Interactive_Timetable_Map
 
                 xtr.Save(directory + @"\User_Database.xml");
                 MessageBox.Show("User: " + newUsername + "succesfully added", "User Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Application.OpenForms.OfType<MainForm>().First().UpdateUserForm();
             }
-
-
         }
-
-        bool found;
 
         private void removeUserButton_Click(object sender, EventArgs e)
         {
-            if (currentUser.GetUsername == loginUser.GetUsername) { MessageBox.Show("You cannot remove yourself from the users list", "User Cannot Be Removed", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
-            else
+            if(currentUser != null)
             {
-                DialogResult removeUser = MessageBox.Show("Do you want to remove the currently selected user? this action cannot be undone.", "Remove User", MessageBoxButtons.YesNo);
-                if (removeUser == DialogResult.Yes)
+                if (currentUser.GetUsername == loginUser.GetUsername) { MessageBox.Show("You cannot remove yourself from the users list", "User Cannot Be Removed", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+                else
                 {
-                    string removeName = currentUser.GetUsername;
-                    foreach (XmlNode userName in xtr.DocumentElement.SelectNodes("//Username"))
+                    DialogResult removeUser = MessageBox.Show("Do you want to remove the currently selected user? this action cannot be undone.", "Remove User", MessageBoxButtons.YesNo);
+                    if (removeUser == DialogResult.Yes)
                     {
-                        if (removeName == userName.FirstChild.Value)
+                        string removeName = currentUser.GetUsername;
+                        foreach (XmlNode userName in xtr.DocumentElement.SelectNodes("//Username"))
                         {
-                            XmlNode parent = userName.ParentNode;
-                            //userName.ParentNode.RemoveAll();
-                            parent.ParentNode.RemoveChild(parent);
+                            if (removeName == userName.FirstChild.Value)
+                            {
+                                XmlNode parent = userName.ParentNode;
+                                //userName.ParentNode.RemoveAll();
+                                parent.ParentNode.RemoveChild(parent);
 
-                            xtr.Save(directory + @"\User_Database.xml");
+                                xtr.Save(directory + @"\User_Database.xml");
+
+                            }
 
                         }
-
+                        MessageBox.Show("User: " + removeName + "succesfully removed", "User Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Application.OpenForms.OfType<MainForm>().First().UpdateUserForm();
+                        AddUsersUI();
                     }
-                    MessageBox.Show("User: " + removeName + "succesfully removed", "User Removed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else if (removeUser == DialogResult.No) { }
                 }
-                else if (removeUser == DialogResult.No) { }
-
+            }
+            else
+            {
+                MessageBox.Show("User must be selected.");
             }
         }
 
         private void changePasswordButton_Click(object sender, EventArgs e)
         {
-            // input for new data
-            string newPassword = Interaction.InputBox("Enter the new password for user: " + currentUser.GetUsername + "Must be 5 characters or longer", "Enter New Password", "Enter new Password");
-            while (newPassword.Length < 5) { newPassword = Interaction.InputBox("Enter the new password for user: " + currentUser.GetUsername + "Must be 5 characters or longer", "Enter New Password", "Enter new Password"); }
-            // search for user and change detail
-            foreach (XmlNode userName in xtr.DocumentElement.SelectNodes("//Username"))
+            if(currentUser != null)
             {
-                if (currentUser.GetUsername == userName.FirstChild.Value)
+                // input for new data
+                string newPassword = Interaction.InputBox("Enter the new password for User: " + currentUser.GetUsername + Environment.NewLine + "Must be 5 characters or longer", "Enter New Password");
+                if(newPassword.Length == 0) { return; }
+                if (newPassword.Length < 5) { MessageBox.Show("Password must be 5 characters or longer."); }
+                else
                 {
-                    XmlNode parent = userName.ParentNode;
-                    foreach (XmlNode node in parent)
+                    // search for user and change detail
+                    foreach (XmlNode userName in xtr.DocumentElement.SelectNodes("//Username"))
                     {
-                        if (node.Name == "Password") { node.InnerText = newPassword; }
+                        if (currentUser.GetUsername == userName.FirstChild.Value)
+                        {
+                            XmlNode parent = userName.ParentNode;
+                            foreach (XmlNode node in parent)
+                            {
+                                if (node.Name == "Password") { node.InnerText = newPassword; }
+                            }
+                        }
                     }
+                    xtr.Save(directory + @"\User_Database.xml");
+                    MessageBox.Show("User: " + currentUser + "has had their password changed", "Password Changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Application.OpenForms.OfType<MainForm>().First().UpdateUserForm();
                 }
             }
-            xtr.Save(directory + @"\User_Database.xml");
-            MessageBox.Show("User: " + currentUser + "has had their password changed", "Password Changed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                MessageBox.Show("User not selected.");
+            }
         }
 
         private void textBoxFirstName_TextChanged(object sender, EventArgs e)
@@ -209,7 +230,6 @@ namespace Interactive_Timetable_Map
             textBoxLastName.Text = user[index].GetSurname;
             textBoxUsername.Text = user[index].GetUsername;
             textBoxGroup.Text = user[index].GetModule;
-
         }
     }
 }

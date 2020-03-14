@@ -151,14 +151,6 @@ namespace Interactive_Timetable_Map
             }
         }
 
-        public virtual void changeUserList()
-        {
-            // called when user details are changed
-            // clear the list and re read the details
-            usersList.Clear();
-            UserXMLReader();
-        }
-
         /// Opens Login Form
         private void loginButton_Click(object sender, EventArgs e)
         {
@@ -246,30 +238,40 @@ namespace Interactive_Timetable_Map
 
         private void EditDatabaseButton_Click(object sender, EventArgs e)
         {
-            // open database form and use a callback to update the timetable
-            EditDatabaseForm DataForm = new EditDatabaseForm();
-            this.Hide();
-            DataForm.FormClosed += new FormClosedEventHandler(DataForm_FormClosed);
+            if (Application.OpenForms.OfType<EditDatabaseForm>().Count() > 0) { Application.OpenForms.OfType<EditDatabaseForm>().First().Close(); }
+            var DataForm = new EditDatabaseForm();
             DataForm.ShowDialog();
         }
 
         // reload the timetable from the file
-        void DataForm_FormClosed(object sender, FormClosedEventArgs e) { ModuleTimetableXMLReader(); TimetableDataGridLoad(); }
+        public void UpdateDataForm()
+        {
+            moduleTimetableList.Clear();
+            ModuleTimetableXMLReader();
+            TimetableDataGridLoad();
+        }
 
         private void EditUsersButton_Click(object sender, EventArgs e)
         {
             // open users form and use a callback when closed to update the users list
-            EditUsersForm UserForm = new EditUsersForm(usersList, this, currentUser);
-            this.Hide();
-            UserForm.FormClosed += new FormClosedEventHandler(UserForm_FormClosed);
+            if (Application.OpenForms.OfType<EditUsersForm>().Count() > 0) { Application.OpenForms.OfType<EditUsersForm>().First().Close(); }
+            var UserForm = new EditUsersForm(usersList, this, currentUser);
             UserForm.ShowDialog();
         }
 
         // reload the users from the file
-        void UserForm_FormClosed(object sender, FormClosedEventArgs e) { changeUserList(); }
+        public void UpdateUserForm()
+        {
+            // called when user details are changed
+            // clear the list and re read the details
+            MessageBox.Show("Test");
+            usersList.Clear();
+            UserXMLReader();
+        }
 
         private void helpButton_Click(object sender, EventArgs e)
         {
+            if (Application.OpenForms.OfType<HelpForm>().Count() > 0) { Application.OpenForms.OfType<HelpForm>().First().Close(); }
             var HelpForm = new HelpForm();
             HelpForm.Show();
         }
@@ -280,16 +282,6 @@ namespace Interactive_Timetable_Map
             adminLoggedIn = false;
             currentUser = null;
             LoginCheck(loggedIn, adminLoggedIn, currentUser);
-        }
-
-        private void MainForm_Enter(object sender, EventArgs e)
-        {
-            changeUserList();
-        }
-
-        private void MainForm_Enter(object sender, ControlEventArgs e)
-        {
-            changeUserList();
         }
     }
 }
