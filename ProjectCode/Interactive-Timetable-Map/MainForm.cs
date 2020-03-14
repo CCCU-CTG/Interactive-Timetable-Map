@@ -193,7 +193,7 @@ namespace Interactive_Timetable_Map
                 //Resets table
                 timetableDataGrid.Rows.Clear();
                 //Creates 11 empty rows
-                for (int i = 0; i < 11; i++)
+                for (int i = 0; i < timetableTimes.Length; i++)
                 {
                     timetableDataGrid.Rows.Add
                         (moduleTimetableList[selectedModule].GetMonday[i],
@@ -203,14 +203,13 @@ namespace Interactive_Timetable_Map
                         moduleTimetableList[selectedModule].GetFriday[i]);
                     timetableDataGrid.Rows[i].HeaderCell.Value = timetableTimes[i];
                 }
-
                 timetableDataGrid.AllowUserToAddRows = false;
             }
             else
             {
                 timetableDataGrid.AllowUserToAddRows = true;
                 timetableDataGrid.Rows.Clear();
-                for (int i = 0; i < 11; i++) { timetableDataGrid.Rows.Add(); timetableDataGrid.Rows[i].HeaderCell.Value = timetableTimes[i]; }
+                for (int i = 0; i < timetableTimes.Length; i++) { timetableDataGrid.Rows.Add(); timetableDataGrid.Rows[i].HeaderCell.Value = timetableTimes[i]; }
 
                 //Displays time for each cell
                 timetableDataGrid.AllowUserToAddRows = false;
