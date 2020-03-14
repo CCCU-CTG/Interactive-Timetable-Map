@@ -30,6 +30,11 @@
         {
             this.timeTableGroupBoxUI = new System.Windows.Forms.GroupBox();
             this.timetableDataGrid = new System.Windows.Forms.DataGridView();
+            this.Monday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userGroupBoxUI = new System.Windows.Forms.GroupBox();
             this.helpButton = new System.Windows.Forms.Button();
             this.logoutButton = new System.Windows.Forms.Button();
@@ -37,11 +42,6 @@
             this.editDatabaseButton = new System.Windows.Forms.Button();
             this.testingLoggedInTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
-            this.Friday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Thursday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Wednesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tuesday = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Monday = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timeTableGroupBoxUI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableDataGrid)).BeginInit();
             this.userGroupBoxUI.SuspendLayout();
@@ -52,7 +52,7 @@
             this.timeTableGroupBoxUI.Controls.Add(this.timetableDataGrid);
             this.timeTableGroupBoxUI.Location = new System.Drawing.Point(12, 12);
             this.timeTableGroupBoxUI.Name = "timeTableGroupBoxUI";
-            this.timeTableGroupBoxUI.Size = new System.Drawing.Size(593, 426);
+            this.timeTableGroupBoxUI.Size = new System.Drawing.Size(593, 281);
             this.timeTableGroupBoxUI.TabIndex = 0;
             this.timeTableGroupBoxUI.TabStop = false;
             this.timeTableGroupBoxUI.Text = "Timetable";
@@ -75,9 +75,44 @@
             this.timetableDataGrid.Name = "timetableDataGrid";
             this.timetableDataGrid.ReadOnly = true;
             this.timetableDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.timetableDataGrid.Size = new System.Drawing.Size(581, 401);
+            this.timetableDataGrid.Size = new System.Drawing.Size(581, 244);
             this.timetableDataGrid.TabIndex = 3;
             this.timetableDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.timetableDataGrid_CellMouseClick);
+            // 
+            // Monday
+            // 
+            this.Monday.HeaderText = "Monday";
+            this.Monday.Name = "Monday";
+            this.Monday.ReadOnly = true;
+            this.Monday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Tuesday
+            // 
+            this.Tuesday.HeaderText = "Tuesday";
+            this.Tuesday.Name = "Tuesday";
+            this.Tuesday.ReadOnly = true;
+            this.Tuesday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Wednesday
+            // 
+            this.Wednesday.HeaderText = "Wednesday";
+            this.Wednesday.Name = "Wednesday";
+            this.Wednesday.ReadOnly = true;
+            this.Wednesday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Thursday
+            // 
+            this.Thursday.HeaderText = "Thursday";
+            this.Thursday.Name = "Thursday";
+            this.Thursday.ReadOnly = true;
+            this.Thursday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Friday
+            // 
+            this.Friday.HeaderText = "Friday";
+            this.Friday.Name = "Friday";
+            this.Friday.ReadOnly = true;
+            this.Friday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // userGroupBoxUI
             // 
@@ -89,14 +124,14 @@
             this.userGroupBoxUI.Controls.Add(this.loginButton);
             this.userGroupBoxUI.Location = new System.Drawing.Point(611, 12);
             this.userGroupBoxUI.Name = "userGroupBoxUI";
-            this.userGroupBoxUI.Size = new System.Drawing.Size(177, 426);
+            this.userGroupBoxUI.Size = new System.Drawing.Size(177, 281);
             this.userGroupBoxUI.TabIndex = 1;
             this.userGroupBoxUI.TabStop = false;
             this.userGroupBoxUI.Text = "User";
             // 
             // helpButton
             // 
-            this.helpButton.Location = new System.Drawing.Point(7, 325);
+            this.helpButton.Location = new System.Drawing.Point(6, 191);
             this.helpButton.Name = "helpButton";
             this.helpButton.Size = new System.Drawing.Size(163, 23);
             this.helpButton.TabIndex = 4;
@@ -116,7 +151,7 @@
             // 
             // editUsersButton
             // 
-            this.editUsersButton.Location = new System.Drawing.Point(6, 383);
+            this.editUsersButton.Location = new System.Drawing.Point(5, 249);
             this.editUsersButton.Name = "editUsersButton";
             this.editUsersButton.Size = new System.Drawing.Size(164, 23);
             this.editUsersButton.TabIndex = 3;
@@ -126,7 +161,7 @@
             // 
             // editDatabaseButton
             // 
-            this.editDatabaseButton.Location = new System.Drawing.Point(6, 354);
+            this.editDatabaseButton.Location = new System.Drawing.Point(5, 220);
             this.editDatabaseButton.Name = "editDatabaseButton";
             this.editDatabaseButton.Size = new System.Drawing.Size(164, 23);
             this.editDatabaseButton.TabIndex = 2;
@@ -153,46 +188,11 @@
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
-            // Friday
-            // 
-            this.Friday.HeaderText = "Friday";
-            this.Friday.Name = "Friday";
-            this.Friday.ReadOnly = true;
-            this.Friday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Thursday
-            // 
-            this.Thursday.HeaderText = "Thursday";
-            this.Thursday.Name = "Thursday";
-            this.Thursday.ReadOnly = true;
-            this.Thursday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Wednesday
-            // 
-            this.Wednesday.HeaderText = "Wednesday";
-            this.Wednesday.Name = "Wednesday";
-            this.Wednesday.ReadOnly = true;
-            this.Wednesday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Tuesday
-            // 
-            this.Tuesday.HeaderText = "Tuesday";
-            this.Tuesday.Name = "Tuesday";
-            this.Tuesday.ReadOnly = true;
-            this.Tuesday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Monday
-            // 
-            this.Monday.HeaderText = "Monday";
-            this.Monday.Name = "Monday";
-            this.Monday.ReadOnly = true;
-            this.Monday.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 297);
             this.Controls.Add(this.userGroupBoxUI);
             this.Controls.Add(this.timeTableGroupBoxUI);
             this.Name = "MainForm";
