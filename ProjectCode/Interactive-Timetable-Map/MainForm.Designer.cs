@@ -52,7 +52,7 @@
             this.timeTableGroupBoxUI.Controls.Add(this.timetableDataGrid);
             this.timeTableGroupBoxUI.Location = new System.Drawing.Point(12, 12);
             this.timeTableGroupBoxUI.Name = "timeTableGroupBoxUI";
-            this.timeTableGroupBoxUI.Size = new System.Drawing.Size(593, 281);
+            this.timeTableGroupBoxUI.Size = new System.Drawing.Size(593, 273);
             this.timeTableGroupBoxUI.TabIndex = 0;
             this.timeTableGroupBoxUI.TabStop = false;
             this.timeTableGroupBoxUI.Text = "Timetable";
@@ -75,7 +75,7 @@
             this.timetableDataGrid.Name = "timetableDataGrid";
             this.timetableDataGrid.ReadOnly = true;
             this.timetableDataGrid.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.timetableDataGrid.Size = new System.Drawing.Size(581, 244);
+            this.timetableDataGrid.Size = new System.Drawing.Size(581, 243);
             this.timetableDataGrid.TabIndex = 3;
             this.timetableDataGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.timetableDataGrid_CellMouseClick);
             // 
