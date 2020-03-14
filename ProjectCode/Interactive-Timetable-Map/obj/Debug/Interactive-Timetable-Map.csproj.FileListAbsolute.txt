@@ -176,3 +176,10 @@ C:\Users\Connor\Documents\GitHub\Interactive-Timetable-Map\ProjectCode\Interacti
 C:\Users\Connor\Documents\GitHub\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.CopyComplete
 C:\Users\Connor\Documents\GitHub\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
 C:\Users\Connor\Documents\GitHub\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
+C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Microsoft.Windows.Design.Interaction.dll
+C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Microsoft.Windows.Design.Extensibility.dll
+C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\en\Microsoft.Windows.Design.Interaction.resources.dll
+C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\en\Microsoft.Windows.Design.Extensibility.resources.dll
+C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.AddUser.resources
+C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.HelpForm.resources
+C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.CopyComplete
