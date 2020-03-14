@@ -180,6 +180,8 @@ namespace Interactive_Timetable_Map
         {
             int selectedModule = 0;
 
+            string[] timetableTimes = new string[] { "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00"};
+
             if (loggedIn)
             {
                 timetableDataGrid.AllowUserToAddRows = true;
@@ -199,39 +201,18 @@ namespace Interactive_Timetable_Map
                         moduleTimetableList[selectedModule].GetWednesday[i],
                         moduleTimetableList[selectedModule].GetThursday[i],
                         moduleTimetableList[selectedModule].GetFriday[i]);
+                    timetableDataGrid.Rows[i].HeaderCell.Value = timetableTimes[i];
                 }
 
-                timetableDataGrid.Rows[0].HeaderCell.Value = "09:00";
-                timetableDataGrid.Rows[1].HeaderCell.Value = "10:00";
-                timetableDataGrid.Rows[2].HeaderCell.Value = "11:00";
-                timetableDataGrid.Rows[3].HeaderCell.Value = "12:00";
-                timetableDataGrid.Rows[4].HeaderCell.Value = "13:00";
-                timetableDataGrid.Rows[5].HeaderCell.Value = "14:00";
-                timetableDataGrid.Rows[6].HeaderCell.Value = "15:00";
-                timetableDataGrid.Rows[7].HeaderCell.Value = "16:00";
-                timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
-                timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
-                timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
                 timetableDataGrid.AllowUserToAddRows = false;
             }
             else
             {
                 timetableDataGrid.AllowUserToAddRows = true;
                 timetableDataGrid.Rows.Clear();
-                for (int i = 0; i < 11; i++) { timetableDataGrid.Rows.Add(); }
+                for (int i = 0; i < 11; i++) { timetableDataGrid.Rows.Add(); timetableDataGrid.Rows[i].HeaderCell.Value = timetableTimes[i]; }
 
                 //Displays time for each cell
-                timetableDataGrid.Rows[0].HeaderCell.Value = "09:00";
-                timetableDataGrid.Rows[1].HeaderCell.Value = "10:00";
-                timetableDataGrid.Rows[2].HeaderCell.Value = "11:00";
-                timetableDataGrid.Rows[3].HeaderCell.Value = "12:00";
-                timetableDataGrid.Rows[4].HeaderCell.Value = "13:00";
-                timetableDataGrid.Rows[5].HeaderCell.Value = "14:00";
-                timetableDataGrid.Rows[6].HeaderCell.Value = "15:00";
-                timetableDataGrid.Rows[7].HeaderCell.Value = "16:00";
-                timetableDataGrid.Rows[8].HeaderCell.Value = "17:00";
-                timetableDataGrid.Rows[9].HeaderCell.Value = "18:00";
-                timetableDataGrid.Rows[10].HeaderCell.Value = "19:00";
                 timetableDataGrid.AllowUserToAddRows = false;
             }
         }
