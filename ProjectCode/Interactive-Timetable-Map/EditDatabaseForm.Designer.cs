@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.userGroupBoxUI = new System.Windows.Forms.GroupBox();
             this.buttonTimeSlot = new System.Windows.Forms.Button();
             this.groupBoxSelected = new System.Windows.Forms.GroupBox();
@@ -48,6 +49,7 @@
             this.moduleNameComboBox = new System.Windows.Forms.ComboBox();
             this.labelTuesday = new System.Windows.Forms.Label();
             this.labelMonday = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.userGroupBoxUI.SuspendLayout();
             this.groupBoxSelected.SuspendLayout();
             this.editDatabaseGroupBoxUI.SuspendLayout();
@@ -74,6 +76,7 @@
             this.buttonTimeSlot.Size = new System.Drawing.Size(164, 23);
             this.buttonTimeSlot.TabIndex = 10;
             this.buttonTimeSlot.Text = "Change Selected Time Slot";
+            this.toolTip.SetToolTip(this.buttonTimeSlot, "Change Selected Timeslot Screen");
             this.buttonTimeSlot.UseVisualStyleBackColor = true;
             this.buttonTimeSlot.Click += new System.EventHandler(this.buttonTimeSlot_Click);
             // 
@@ -103,6 +106,7 @@
             this.removeModuleButton.Size = new System.Drawing.Size(164, 23);
             this.removeModuleButton.TabIndex = 6;
             this.removeModuleButton.Text = "Remove Module";
+            this.toolTip.SetToolTip(this.removeModuleButton, "Removes Selected Module");
             this.removeModuleButton.UseVisualStyleBackColor = true;
             this.removeModuleButton.Click += new System.EventHandler(this.removeModuleButton_Click);
             // 
@@ -113,6 +117,7 @@
             this.addModuleButton.Size = new System.Drawing.Size(164, 23);
             this.addModuleButton.TabIndex = 5;
             this.addModuleButton.Text = "Add Module";
+            this.toolTip.SetToolTip(this.addModuleButton, "New Module Screen");
             this.addModuleButton.UseVisualStyleBackColor = true;
             this.addModuleButton.Click += new System.EventHandler(this.addModuleButton_Click);
             // 
@@ -123,6 +128,7 @@
             this.backButton.Size = new System.Drawing.Size(164, 23);
             this.backButton.TabIndex = 4;
             this.backButton.Text = "Back";
+            this.toolTip.SetToolTip(this.backButton, "Shows Previous Screen");
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
@@ -154,6 +160,7 @@
             this.comboBoxFri.Name = "comboBoxFri";
             this.comboBoxFri.Size = new System.Drawing.Size(156, 21);
             this.comboBoxFri.TabIndex = 50;
+            this.toolTip.SetToolTip(this.comboBoxFri, "Select Timeslot");
             this.comboBoxFri.SelectedIndexChanged += new System.EventHandler(this.comboBoxFri_SelectedIndexChanged);
             // 
             // comboBoxThurs
@@ -163,6 +170,7 @@
             this.comboBoxThurs.Name = "comboBoxThurs";
             this.comboBoxThurs.Size = new System.Drawing.Size(156, 21);
             this.comboBoxThurs.TabIndex = 49;
+            this.toolTip.SetToolTip(this.comboBoxThurs, "Select Timeslot");
             this.comboBoxThurs.SelectedIndexChanged += new System.EventHandler(this.comboBoxThurs_SelectedIndexChanged);
             // 
             // comboBoxWeds
@@ -172,6 +180,7 @@
             this.comboBoxWeds.Name = "comboBoxWeds";
             this.comboBoxWeds.Size = new System.Drawing.Size(156, 21);
             this.comboBoxWeds.TabIndex = 48;
+            this.toolTip.SetToolTip(this.comboBoxWeds, "Select Timeslot");
             this.comboBoxWeds.SelectedIndexChanged += new System.EventHandler(this.comboBoxWeds_SelectedIndexChanged);
             // 
             // comboBoxTues
@@ -181,6 +190,7 @@
             this.comboBoxTues.Name = "comboBoxTues";
             this.comboBoxTues.Size = new System.Drawing.Size(156, 21);
             this.comboBoxTues.TabIndex = 47;
+            this.toolTip.SetToolTip(this.comboBoxTues, "Select Timeslot");
             this.comboBoxTues.SelectedIndexChanged += new System.EventHandler(this.comboBoxTues_SelectedIndexChanged);
             // 
             // comboBoxMon
@@ -190,6 +200,7 @@
             this.comboBoxMon.Name = "comboBoxMon";
             this.comboBoxMon.Size = new System.Drawing.Size(156, 21);
             this.comboBoxMon.TabIndex = 46;
+            this.toolTip.SetToolTip(this.comboBoxMon, "Select Timeslot");
             this.comboBoxMon.SelectedIndexChanged += new System.EventHandler(this.comboBoxMon_SelectedIndexChanged);
             // 
             // labelFriday
@@ -240,6 +251,7 @@
             this.moduleNameComboBox.Name = "moduleNameComboBox";
             this.moduleNameComboBox.Size = new System.Drawing.Size(121, 21);
             this.moduleNameComboBox.TabIndex = 31;
+            this.toolTip.SetToolTip(this.moduleNameComboBox, "Name Of The Module");
             this.moduleNameComboBox.SelectedIndexChanged += new System.EventHandler(this.moduleNameComboBox_SelectedIndexChanged);
             // 
             // labelTuesday
@@ -303,5 +315,6 @@
         private System.Windows.Forms.Button buttonTimeSlot;
         private System.Windows.Forms.GroupBox groupBoxSelected;
         private System.Windows.Forms.TextBox textBoxTimeSlot;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

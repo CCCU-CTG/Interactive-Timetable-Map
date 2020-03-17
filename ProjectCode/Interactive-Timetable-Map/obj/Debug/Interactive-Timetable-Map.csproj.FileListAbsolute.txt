@@ -183,3 +183,4 @@ C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetab
 C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.AddUser.resources
 C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.HelpForm.resources
 C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.CopyComplete
+C:\Uni\Year 2 - Computer Science\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.AddUser.resources

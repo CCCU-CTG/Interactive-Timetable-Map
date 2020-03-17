@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.timeTableGroupBoxUI = new System.Windows.Forms.GroupBox();
             this.timetableDataGrid = new System.Windows.Forms.DataGridView();
             this.Monday = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +43,7 @@
             this.editDatabaseButton = new System.Windows.Forms.Button();
             this.testingLoggedInTextBox = new System.Windows.Forms.TextBox();
             this.loginButton = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.timeTableGroupBoxUI.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.timetableDataGrid)).BeginInit();
             this.userGroupBoxUI.SuspendLayout();
@@ -136,6 +138,7 @@
             this.helpButton.Size = new System.Drawing.Size(163, 23);
             this.helpButton.TabIndex = 4;
             this.helpButton.Text = "Help";
+            this.toolTip.SetToolTip(this.helpButton, "Opens the Help Screen");
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
@@ -146,6 +149,7 @@
             this.logoutButton.Size = new System.Drawing.Size(164, 23);
             this.logoutButton.TabIndex = 2;
             this.logoutButton.Text = "Logout";
+            this.toolTip.SetToolTip(this.logoutButton, "Logs User Out");
             this.logoutButton.UseVisualStyleBackColor = true;
             this.logoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
             // 
@@ -156,6 +160,7 @@
             this.editUsersButton.Size = new System.Drawing.Size(164, 23);
             this.editUsersButton.TabIndex = 3;
             this.editUsersButton.Text = "Edit Users";
+            this.toolTip.SetToolTip(this.editUsersButton, "User Database Editor");
             this.editUsersButton.UseVisualStyleBackColor = true;
             this.editUsersButton.Click += new System.EventHandler(this.EditUsersButton_Click);
             // 
@@ -166,6 +171,7 @@
             this.editDatabaseButton.Size = new System.Drawing.Size(164, 23);
             this.editDatabaseButton.TabIndex = 2;
             this.editDatabaseButton.Text = "Edit Database";
+            this.toolTip.SetToolTip(this.editDatabaseButton, "Module Database Editor");
             this.editDatabaseButton.UseVisualStyleBackColor = true;
             this.editDatabaseButton.Click += new System.EventHandler(this.EditDatabaseButton_Click);
             // 
@@ -185,6 +191,7 @@
             this.loginButton.Size = new System.Drawing.Size(164, 23);
             this.loginButton.TabIndex = 0;
             this.loginButton.Text = "Login";
+            this.toolTip.SetToolTip(this.loginButton, "Show Login Screen");
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
@@ -223,6 +230,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Wednesday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Thursday;
         private System.Windows.Forms.DataGridViewTextBoxColumn Friday;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 

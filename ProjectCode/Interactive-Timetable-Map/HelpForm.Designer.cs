@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.helpTextBox = new System.Windows.Forms.TextBox();
             this.nextButton = new System.Windows.Forms.Button();
             this.previousButton = new System.Windows.Forms.Button();
             this.helpIndexTextBox = new System.Windows.Forms.TextBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // helpTextBox
             // 
-            this.helpTextBox.Enabled = false;
             this.helpTextBox.Location = new System.Drawing.Point(13, 13);
             this.helpTextBox.Multiline = true;
             this.helpTextBox.Name = "helpTextBox";
             this.helpTextBox.ReadOnly = true;
             this.helpTextBox.Size = new System.Drawing.Size(676, 103);
             this.helpTextBox.TabIndex = 0;
+            this.helpTextBox.TabStop = false;
             this.helpTextBox.Text = "\r\n";
             // 
             // nextButton
@@ -52,6 +54,7 @@
             this.nextButton.Size = new System.Drawing.Size(92, 23);
             this.nextButton.TabIndex = 1;
             this.nextButton.Text = "Next";
+            this.toolTip.SetToolTip(this.nextButton, "Show Next Help Text");
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
@@ -62,6 +65,7 @@
             this.previousButton.Size = new System.Drawing.Size(92, 23);
             this.previousButton.TabIndex = 2;
             this.previousButton.Text = "Previous";
+            this.toolTip.SetToolTip(this.previousButton, "Show Previous Help Text");
             this.previousButton.UseVisualStyleBackColor = true;
             this.previousButton.Click += new System.EventHandler(this.previousButton_Click);
             // 
@@ -72,6 +76,7 @@
             this.helpIndexTextBox.ReadOnly = true;
             this.helpIndexTextBox.Size = new System.Drawing.Size(92, 20);
             this.helpIndexTextBox.TabIndex = 3;
+            this.toolTip.SetToolTip(this.helpIndexTextBox, "Help Index");
             // 
             // HelpForm
             // 
@@ -96,5 +101,6 @@
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button previousButton;
         private System.Windows.Forms.TextBox helpIndexTextBox;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

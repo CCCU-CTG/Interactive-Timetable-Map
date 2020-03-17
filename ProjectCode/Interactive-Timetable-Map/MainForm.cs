@@ -23,8 +23,8 @@ namespace Interactive_Timetable_Map
         List<Module_Timetable> moduleTimetableList = new List<Module_Timetable>();
 
         // DEBUG, is has the login function worked?
-        bool loggedIn = false;
-        bool adminLoggedIn = false;
+        public static bool loggedIn = false;
+        public static bool adminLoggedIn = false;
 
         public MainForm()
         {

@@ -2,11 +2,14 @@
 <Users>
   <User>
     <ID>0</ID>
-    <Name></Name>
-    <Surname></Surname>
+    <Name>
+    </Name>
+    <Surname>
+    </Surname>
     <Username>admin</Username>
     <Password>admin</Password>
-    <Group></Group>
+    <Group>
+    </Group>
     <Admin>Y</Admin>
   </User>
   <User>

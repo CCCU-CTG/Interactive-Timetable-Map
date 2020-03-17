@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.loginButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.usernameTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.showPasswordCheckbox = new System.Windows.Forms.CheckBox();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // loginButton
@@ -43,6 +45,7 @@
             this.loginButton.Size = new System.Drawing.Size(102, 23);
             this.loginButton.TabIndex = 2;
             this.loginButton.Text = "Login";
+            this.toolTip.SetToolTip(this.loginButton, "Click This Once Username And Password Have Been Entered");
             this.loginButton.UseVisualStyleBackColor = true;
             this.loginButton.Click += new System.EventHandler(this.loginButton_Click);
             // 
@@ -70,6 +73,7 @@
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(115, 20);
             this.usernameTextBox.TabIndex = 0;
+            this.toolTip.SetToolTip(this.usernameTextBox, "Enter Username Here");
             // 
             // passwordTextBox
             // 
@@ -78,6 +82,7 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(115, 20);
             this.passwordTextBox.TabIndex = 1;
+            this.toolTip.SetToolTip(this.passwordTextBox, "Enter Password Here");
             // 
             // showPasswordCheckbox
             // 
@@ -87,6 +92,7 @@
             this.showPasswordCheckbox.Size = new System.Drawing.Size(102, 17);
             this.showPasswordCheckbox.TabIndex = 3;
             this.showPasswordCheckbox.Text = "Show Password";
+            this.toolTip.SetToolTip(this.showPasswordCheckbox, "Shows/Hides Password");
             this.showPasswordCheckbox.UseVisualStyleBackColor = true;
             this.showPasswordCheckbox.CheckedChanged += new System.EventHandler(this.ShowPasswordCheckbox_CheckedChanged);
             // 
@@ -117,6 +123,7 @@
         private System.Windows.Forms.TextBox usernameTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.CheckBox showPasswordCheckbox;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
 
