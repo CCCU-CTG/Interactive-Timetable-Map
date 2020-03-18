@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.userGroupBoxUI = new System.Windows.Forms.GroupBox();
             this.changePasswordButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.labelLastName = new System.Windows.Forms.Label();
             this.comboBoxID = new System.Windows.Forms.ComboBox();
             this.labelID = new System.Windows.Forms.Label();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.userGroupBoxUI.SuspendLayout();
             this.editUsersGroupBoxUI.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +71,7 @@
             this.changePasswordButton.Size = new System.Drawing.Size(164, 26);
             this.changePasswordButton.TabIndex = 13;
             this.changePasswordButton.Text = "Change Password";
+            this.toolTip.SetToolTip(this.changePasswordButton, "Password Changing Screen For Selected User");
             this.changePasswordButton.UseVisualStyleBackColor = true;
             this.changePasswordButton.Click += new System.EventHandler(this.changePasswordButton_Click);
             // 
@@ -79,6 +82,7 @@
             this.backButton.Size = new System.Drawing.Size(164, 23);
             this.backButton.TabIndex = 5;
             this.backButton.Text = "Back";
+            this.toolTip.SetToolTip(this.backButton, "Back To Previous Screen");
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
@@ -90,6 +94,7 @@
             this.addUserButton.Size = new System.Drawing.Size(164, 26);
             this.addUserButton.TabIndex = 10;
             this.addUserButton.Text = "Add User";
+            this.toolTip.SetToolTip(this.addUserButton, "Opens A New User Screen");
             this.addUserButton.UseVisualStyleBackColor = true;
             this.addUserButton.Click += new System.EventHandler(this.addUserButton_Click);
             // 
@@ -101,6 +106,7 @@
             this.removeUserButton.Size = new System.Drawing.Size(164, 26);
             this.removeUserButton.TabIndex = 11;
             this.removeUserButton.Text = "Remove User";
+            this.toolTip.SetToolTip(this.removeUserButton, "Removes Selected User");
             this.removeUserButton.UseVisualStyleBackColor = true;
             this.removeUserButton.Click += new System.EventHandler(this.removeUserButton_Click);
             // 
@@ -207,6 +213,7 @@
             this.comboBoxID.Name = "comboBoxID";
             this.comboBoxID.Size = new System.Drawing.Size(121, 21);
             this.comboBoxID.TabIndex = 21;
+            this.toolTip.SetToolTip(this.comboBoxID, "Select User By ID");
             this.comboBoxID.SelectedIndexChanged += new System.EventHandler(this.comboBoxID_SelectedIndexChanged);
             // 
             // labelID
@@ -254,5 +261,6 @@
         private System.Windows.Forms.Label labelLastName;
         private System.Windows.Forms.ComboBox comboBoxID;
         private System.Windows.Forms.Label labelID;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }
