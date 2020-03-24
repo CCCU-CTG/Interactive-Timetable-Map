@@ -252,6 +252,8 @@ namespace Interactive_Timetable_Map
 
         private void timetableDataGrid_CellMouseClick(object sender, DataGridViewCellEventArgs e)
         {
+            if(e.ColumnIndex < 0) { return; }
+            if (e.RowIndex < 0) { return; }
             switch (timetableDataGrid.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString())
             {
                 case "Lf13":

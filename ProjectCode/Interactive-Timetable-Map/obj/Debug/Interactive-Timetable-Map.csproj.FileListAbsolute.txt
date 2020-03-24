@@ -184,3 +184,23 @@ C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetab
 C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.HelpForm.resources
 C:\Users\genti\Desktop\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.CopyComplete
 C:\Uni\Year 2 - Computer Science\Software Engineering\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.AddUser.resources
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe.config
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.exe
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Interactive-Timetable-Map.pdb
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Microsoft.Windows.Design.Interaction.dll
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\Microsoft.Windows.Design.Extensibility.dll
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\en\Microsoft.Windows.Design.Interaction.resources.dll
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\bin\Debug\en\Microsoft.Windows.Design.Extensibility.resources.dll
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csprojAssemblyReference.cache
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.AddUser.resources
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.EditDatabaseForm.resources
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.EditUsersForm.resources
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.HelpForm.resources
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.loginForm.resources
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.MainForm.resources
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive_Timetable_Map.Properties.Resources.resources
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.GenerateResource.cache
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.CoreCompileInputs.cache
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.csproj.CopyComplete
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.exe
+G:\University\Y2\S2\Software Engineering\Assignment 1\Code\Interactive-Timetable-Map\ProjectCode\Interactive-Timetable-Map\obj\Debug\Interactive-Timetable-Map.pdb
